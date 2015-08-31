@@ -45,9 +45,10 @@ public class LongRangeBuildTool extends BrushTool implements DoubleActionTraceTo
         return player.hasPermission("worldedit.tool.lrbuild");
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actSecondary(Platform server, LocalConfiguration config, Player player, LocalSession session) {
-        WorldVectorFace pos = getTargetFace(player);
+		WorldVectorFace pos = getTargetFace(player);
         if (pos == null) return false;
         EditSession eS = session.createEditSession(player);
         try {
@@ -64,7 +65,8 @@ public class LongRangeBuildTool extends BrushTool implements DoubleActionTraceTo
 
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actPrimary(Platform server, LocalConfiguration config, Player player, LocalSession session) {
         WorldVectorFace pos = getTargetFace(player);
         if (pos == null) return false;
@@ -82,7 +84,8 @@ public class LongRangeBuildTool extends BrushTool implements DoubleActionTraceTo
         return false;
     }
 
-    public WorldVectorFace getTargetFace(Player player) {
+    @SuppressWarnings("deprecation")
+	public WorldVectorFace getTargetFace(Player player) {
         WorldVectorFace target = null;
         target = player.getBlockTraceFace(getRange(), true);
 

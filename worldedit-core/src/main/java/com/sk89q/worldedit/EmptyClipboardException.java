@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Thrown when there is no clipboard set.
  */
+@SuppressWarnings("serial")
 public class EmptyClipboardException extends WorldEditException {
 
 }

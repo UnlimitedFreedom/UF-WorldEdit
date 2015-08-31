@@ -34,7 +34,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
  *
  * @param <E> the element that the factory returns
  */
-@SuppressWarnings("ProtectedField")
 public abstract class AbstractFactory<E> {
 
     protected final WorldEdit worldEdit;

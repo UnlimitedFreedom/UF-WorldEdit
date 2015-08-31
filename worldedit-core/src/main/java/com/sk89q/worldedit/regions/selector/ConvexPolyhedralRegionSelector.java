@@ -37,6 +37,7 @@ import com.sk89q.worldedit.regions.selector.limit.SelectorLimits;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -48,6 +49,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Creates a {@code ConvexPolyhedralRegion} from a user's selections.
  */
+@SuppressWarnings("deprecation")
 public class ConvexPolyhedralRegionSelector extends com.sk89q.worldedit.regions.ConvexPolyhedralRegionSelector implements RegionSelector, CUIRegion {
 
     private final transient ConvexPolyhedralRegion region;

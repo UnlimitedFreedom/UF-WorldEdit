@@ -44,12 +44,13 @@ public class AreaPickaxe implements BlockTool {
         return player.hasPermission("worldedit.superpickaxe.area");
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actPrimary(Platform server, LocalConfiguration config, Player player, LocalSession session, com.sk89q.worldedit.util.Location clicked) {
         int ox = clicked.getBlockX();
         int oy = clicked.getBlockY();
         int oz = clicked.getBlockZ();
-        int initialType = ((World) clicked.getExtent()).getBlockType(clicked.toVector());
+		int initialType = ((World) clicked.getExtent()).getBlockType(clicked.toVector());
 
         if (initialType == 0) {
             return true;

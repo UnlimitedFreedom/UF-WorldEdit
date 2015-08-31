@@ -38,7 +38,8 @@ public final class Patterns {
      * @param pattern the pattern
      * @return a new-style pattern
      */
-    public static Pattern wrap(final com.sk89q.worldedit.patterns.Pattern pattern) {
+    @SuppressWarnings("deprecation")
+	public static Pattern wrap(final com.sk89q.worldedit.patterns.Pattern pattern) {
         checkNotNull(pattern);
         return new Pattern() {
             @Override
@@ -54,7 +55,8 @@ public final class Patterns {
      * @param pattern the pattern
      * @return an old-style pattern
      */
-    public static com.sk89q.worldedit.patterns.Pattern wrap(final Pattern pattern) {
+    @SuppressWarnings("deprecation")
+	public static com.sk89q.worldedit.patterns.Pattern wrap(final Pattern pattern) {
         checkNotNull(pattern);
         return new com.sk89q.worldedit.patterns.Pattern() {
             @Override

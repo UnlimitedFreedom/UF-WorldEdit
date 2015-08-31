@@ -35,7 +35,6 @@ public abstract class ArbitraryBiomeShape {
     private final FlatRegion extent;
     private int cacheOffsetX;
     private int cacheOffsetZ;
-    @SuppressWarnings("FieldCanBeLocal")
     private int cacheSizeX;
     private int cacheSizeZ;
 

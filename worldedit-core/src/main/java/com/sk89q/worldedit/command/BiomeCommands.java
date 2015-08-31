@@ -59,7 +59,8 @@ import static com.sk89q.minecraft.util.commands.Logging.LogMode.REGION;
  */
 public class BiomeCommands {
 
-    private final WorldEdit worldEdit;
+    @SuppressWarnings("unused")
+	private final WorldEdit worldEdit;
 
     /**
      * Create a new instance.
@@ -140,7 +141,8 @@ public class BiomeCommands {
 
             qualifier = "at line of sight point";
         } else if (args.hasFlag('p')) {
-            BaseBiome biome = player.getWorld().getBiome(player.getPosition().toVector2D());
+            @SuppressWarnings("deprecation")
+			BaseBiome biome = player.getWorld().getBiome(player.getPosition().toVector2D());
             biomes.add(biome);
 
             qualifier = "at your position";
@@ -172,7 +174,8 @@ public class BiomeCommands {
         }
     }
 
-    @Command(
+    @SuppressWarnings("deprecation")
+	@Command(
             aliases = { "/setbiome" },
             usage = "<biome>",
             flags = "p",

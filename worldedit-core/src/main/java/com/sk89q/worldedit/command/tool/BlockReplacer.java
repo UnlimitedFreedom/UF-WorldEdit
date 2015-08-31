@@ -66,7 +66,8 @@ public class BlockReplacer implements DoubleActionBlockTool {
 
     @Override
     public boolean actSecondary(Platform server, LocalConfiguration config, Player player, LocalSession session, com.sk89q.worldedit.util.Location clicked) {
-        World world = (World) clicked.getExtent();
+        @SuppressWarnings("unused")
+		World world = (World) clicked.getExtent();
         EditSession editSession = session.createEditSession(player);
         targetBlock = (editSession).getBlock(clicked.toVector());
         BlockType type = BlockType.fromID(targetBlock.getType());

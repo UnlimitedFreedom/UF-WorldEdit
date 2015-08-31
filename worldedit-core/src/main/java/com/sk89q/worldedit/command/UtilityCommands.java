@@ -32,7 +32,6 @@ import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.WorldEditException;
 import com.sk89q.worldedit.blocks.BaseBlock;
-import com.sk89q.worldedit.command.util.CreatureButcher;
 import com.sk89q.worldedit.command.util.EntityRemover;
 import com.sk89q.worldedit.entity.Entity;
 import com.sk89q.worldedit.entity.Player;
@@ -68,11 +67,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import org.bukkit.ChatColor;
+
 import static com.sk89q.minecraft.util.commands.Logging.LogMode.PLACEMENT;
 
 /**
  * Utility commands.
  */
+@SuppressWarnings("deprecation")
 public class UtilityCommands {
 
     private final WorldEdit we;
@@ -286,6 +288,7 @@ public class UtilityCommands {
             affected = editSession.replaceBlocks(region, from, to);
         }
         player.print(affected + " block(s) have been replaced.");
+        player.print(ChatColor.RED + "Do not grief with this or you will lose your privilege of using it.");
     }
 
     @Command(
@@ -386,63 +389,7 @@ public class UtilityCommands {
     @CommandPermissions("worldedit.butcher")
     @Logging(PLACEMENT)
     public void butcher(Actor actor, CommandContext args) throws WorldEditException {
-        LocalConfiguration config = we.getConfiguration();
-        Player player = actor instanceof Player ? (Player) actor : null;
-
-        // technically the default can be larger than the max, but that's not my problem
-        int radius = config.butcherDefaultRadius;
-
-        // there might be a better way to do this but my brain is fried right now
-        if (args.argsLength() > 0) { // user inputted radius, override the default
-            radius = args.getInteger(0);
-            if (config.butcherMaxRadius != -1) { // clamp if there is a max
-                if (radius == -1) {
-                    radius = config.butcherMaxRadius;
-                } else { // Math.min does not work if radius is -1 (actually highest possible value)
-                    radius = Math.min(radius, config.butcherMaxRadius);
-                }
-            }
-        }
-
-        CreatureButcher flags = new CreatureButcher(actor);
-        flags.fromCommand(args);
-
-        List<EntityVisitor> visitors = new ArrayList<EntityVisitor>();
-        LocalSession session = null;
-        EditSession editSession = null;
-
-        if (player != null) {
-            session = we.getSessionManager().get(player);
-            Vector center = session.getPlacementPosition(player);
-            editSession = session.createEditSession(player);
-            List<? extends Entity> entities;
-            if (radius >= 0) {
-                CylinderRegion region = CylinderRegion.createRadius(editSession, center, radius);
-                entities = editSession.getEntities(region);
-            } else {
-                entities = editSession.getEntities();
-            }
-            visitors.add(new EntityVisitor(entities.iterator(), flags.createFunction(editSession.getWorld().getWorldData().getEntityRegistry())));
-        } else {
-            Platform platform = we.getPlatformManager().queryCapability(Capability.WORLD_EDITING);
-            for (World world : platform.getWorlds()) {
-                List<? extends Entity> entities = world.getEntities();
-                visitors.add(new EntityVisitor(entities.iterator(), flags.createFunction(world.getWorldData().getEntityRegistry())));
-            }
-        }
-
-        int killed = 0;
-        for (EntityVisitor visitor : visitors) {
-            Operations.completeLegacy(visitor);
-            killed += visitor.getAffected();
-        }
-
-        actor.print("Killed " + killed + (killed != 1 ? " mobs" : " mob") + (radius < 0 ? "" : " in a radius of " + radius) + ".");
-
-        if (editSession != null) {
-            session.remember(editSession);
-            editSession.flushQueue();
-        }
+    	actor.print("Unknown command. Type \"/help\" for help.");
     }
 
     @Command(

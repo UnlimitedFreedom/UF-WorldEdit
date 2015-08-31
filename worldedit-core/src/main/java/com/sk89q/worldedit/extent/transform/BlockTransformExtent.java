@@ -30,6 +30,7 @@ import com.sk89q.worldedit.world.registry.State;
 import com.sk89q.worldedit.world.registry.StateValue;
 
 import javax.annotation.Nullable;
+
 import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -40,7 +41,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class BlockTransformExtent extends AbstractDelegateExtent {
 
-    private static final double RIGHT_ANGLE = Math.toRadians(90);
+    @SuppressWarnings("unused")
+	private static final double RIGHT_ANGLE = Math.toRadians(90);
 
     private final Transform transform;
     private final BlockRegistry blockRegistry;

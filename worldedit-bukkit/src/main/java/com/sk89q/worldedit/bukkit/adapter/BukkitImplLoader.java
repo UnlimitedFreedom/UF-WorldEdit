@@ -83,7 +83,8 @@ public class BukkitImplLoader {
      * @param file the file
      * @throws IOException thrown on I/O error
      */
-    public void addFromJar(File file) throws IOException {
+    @SuppressWarnings("rawtypes")
+	public void addFromJar(File file) throws IOException {
         Closer closer = Closer.create();
         JarFile jar = closer.register(new JarFile(file));
         try {

@@ -22,6 +22,7 @@ package com.sk89q.worldedit.extent.inventory;
 /**
  * Thrown when the target inventory of a block bag is full.
  */
+@SuppressWarnings("serial")
 public class OutOfSpaceException extends BlockBagException {
 
     private int id;

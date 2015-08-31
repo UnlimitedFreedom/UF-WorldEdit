@@ -32,6 +32,7 @@ import com.sk89q.worldedit.extension.platform.Preference;
 import com.sk89q.worldedit.util.command.CommandMapping;
 import com.sk89q.worldedit.util.command.Description;
 import com.sk89q.worldedit.util.command.Dispatcher;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Server;
@@ -39,17 +40,20 @@ import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("deprecation")
 public class BukkitServerInterface extends ServerInterface implements MultiUserPlatform {
     public Server server;
     public WorldEditPlugin plugin;
     private CommandRegistration dynamicCommands;
-    private BukkitBiomeRegistry biomes;
+    @SuppressWarnings("unused")
+	private BukkitBiomeRegistry biomes;
     private boolean hookingEvents;
 
     public BukkitServerInterface(WorldEditPlugin plugin, Server server) {

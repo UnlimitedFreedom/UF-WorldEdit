@@ -22,6 +22,7 @@ package com.sk89q.worldedit.extension.input;
 /**
  * Thrown when usage is disallowed.
  */
+@SuppressWarnings("serial")
 public class DisallowedUsageException extends InputParseException {
 
     /**

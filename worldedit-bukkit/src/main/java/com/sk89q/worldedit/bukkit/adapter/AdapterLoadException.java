@@ -22,6 +22,7 @@ package com.sk89q.worldedit.bukkit.adapter;
 /**
  * Thrown when no adapter can be found.
  */
+@SuppressWarnings("serial")
 public class AdapterLoadException extends Exception {
 
     public AdapterLoadException() {

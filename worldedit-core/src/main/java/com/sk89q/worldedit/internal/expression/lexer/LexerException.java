@@ -24,6 +24,7 @@ import com.sk89q.worldedit.internal.expression.ExpressionException;
 /**
  * Thrown when the lexer encounters a problem.
  */
+@SuppressWarnings("serial")
 public class LexerException extends ExpressionException {
 
     public LexerException(int position) {

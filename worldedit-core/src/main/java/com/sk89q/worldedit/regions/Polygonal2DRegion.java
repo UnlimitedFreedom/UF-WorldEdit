@@ -36,6 +36,7 @@ import java.util.List;
 /**
  * Represents a 2D polygonal region.
  */
+@SuppressWarnings("deprecation")
 public class Polygonal2DRegion extends AbstractRegion implements FlatRegion {
 
     private List<BlockVector2D> points;

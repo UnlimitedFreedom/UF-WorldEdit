@@ -28,6 +28,7 @@ import com.sk89q.worldedit.blocks.BlockMaterial;
 import com.sk89q.worldedit.util.gson.VectorAdapter;
 
 import javax.annotation.Nullable;
+
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -172,8 +173,10 @@ public class BundledBlockData {
     private static class BlockEntry {
         private int legacyId;
         private String id;
-        private String unlocalizedName;
-        private List<String> aliases;
+        @SuppressWarnings("unused")
+		private String unlocalizedName;
+        @SuppressWarnings("unused")
+		private List<String> aliases;
         private Map<String, SimpleState> states = new HashMap<String, SimpleState>();
         private SimpleBlockMaterial material = new SimpleBlockMaterial();
 

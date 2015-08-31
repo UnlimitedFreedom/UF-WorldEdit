@@ -24,6 +24,7 @@ import com.sk89q.worldedit.Vector2D;
 /**
  * Thrown if a chunk is missing.
  */
+@SuppressWarnings("serial")
 public class MissingChunkException extends ChunkStoreException {
 
     private Vector2D position;

@@ -22,7 +22,6 @@ package com.sk89q.worldedit;
 /**
  * @deprecated Replace all uses of {@link WorldVector}s with {@link Location}s
  */
-@SuppressWarnings("deprecation")
 @Deprecated
 public class BlockWorldVector extends WorldVector {
 

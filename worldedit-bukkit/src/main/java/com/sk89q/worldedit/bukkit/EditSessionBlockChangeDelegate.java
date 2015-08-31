@@ -20,7 +20,9 @@
 package com.sk89q.worldedit.bukkit;
 
 import com.sk89q.worldedit.blocks.BlockID;
+
 import org.bukkit.BlockChangeDelegate;
+
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.MaxChangedBlocksException;
@@ -65,7 +67,8 @@ public class EditSessionBlockChangeDelegate implements BlockChangeDelegate {
         return setRawTypeIdAndData(x, y, z, typeId, data);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getTypeId(int x, int y, int z) {
         return editSession.getBlockType(new Vector(x, y, z));
     }
@@ -75,7 +78,8 @@ public class EditSessionBlockChangeDelegate implements BlockChangeDelegate {
         return editSession.getWorld().getMaxY() + 1;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean isEmpty(int x, int y, int z) {
         return editSession.getBlockType(new Vector(x, y, z)) == BlockID.AIR;
     }

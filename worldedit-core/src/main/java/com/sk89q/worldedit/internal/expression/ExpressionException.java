@@ -23,6 +23,7 @@ package com.sk89q.worldedit.internal.expression;
  * Thrown when there's a problem during any stage of the expression
  * compilation or evaluation.
  */
+@SuppressWarnings("serial")
 public class ExpressionException extends Exception {
 
     private final int position;

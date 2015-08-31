@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Thrown when a disallowed item is used.
  */
+@SuppressWarnings("serial")
 public class DisallowedItemException extends WorldEditException {
 
     private String type;

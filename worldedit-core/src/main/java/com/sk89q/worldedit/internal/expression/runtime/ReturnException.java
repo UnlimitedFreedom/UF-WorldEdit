@@ -24,6 +24,7 @@ package com.sk89q.worldedit.internal.expression.runtime;
  * {@link com.sk89q.worldedit.internal.expression.Expression#evaluate}
  * catches this exception and returns the enclosed value.
  */
+@SuppressWarnings("serial")
 public class ReturnException extends EvaluationException {
 
     final double value;

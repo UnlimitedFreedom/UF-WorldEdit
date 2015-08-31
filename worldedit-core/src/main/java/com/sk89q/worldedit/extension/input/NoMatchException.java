@@ -22,6 +22,7 @@ package com.sk89q.worldedit.extension.input;
 /**
  * Thrown when a match fails when input is parsed.
  */
+@SuppressWarnings("serial")
 public class NoMatchException extends InputParseException {
 
     /**

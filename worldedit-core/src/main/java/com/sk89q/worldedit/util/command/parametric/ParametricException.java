@@ -23,6 +23,7 @@ package com.sk89q.worldedit.util.command.parametric;
  * Thrown if the {@link ParametricBuilder} can't build commands from
  * an object for whatever reason.
  */
+@SuppressWarnings("serial")
 public class ParametricException extends RuntimeException {
 
     public ParametricException() {

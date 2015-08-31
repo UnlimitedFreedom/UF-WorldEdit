@@ -158,7 +158,6 @@ public class CuboidClipboard {
      *
      * @param angle in degrees
      */
-    @SuppressWarnings("deprecation")
     public void rotate2D(int angle) {
         angle = angle % 360;
         if (angle % 90 != 0) { // Can only rotate 90 degrees at the moment
@@ -228,7 +227,6 @@ public class CuboidClipboard {
      * @param dir direction to flip
      * @param aroundPlayer flip the offset around the player
      */
-    @SuppressWarnings("deprecation")
     public void flip(FlipDirection dir, boolean aroundPlayer) {
         checkNotNull(dir);
 

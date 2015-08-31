@@ -34,6 +34,7 @@ import java.util.Set;
 /**
  * A tool that flood fills blocks.
  */
+@SuppressWarnings("deprecation")
 public class FloodFillTool implements BlockTool {
 
     private int range;

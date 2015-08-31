@@ -22,6 +22,7 @@ package com.sk89q.util.yaml;
 /**
  * YAMLProcessor exception.
  */
+@SuppressWarnings("serial")
 public class YAMLProcessorException extends Exception {
 
     public YAMLProcessorException() {

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 /**
  * Thrown if the world is missing.
  */
+@SuppressWarnings("serial")
 public class MissingWorldException extends ChunkStoreException {
 
     private String worldName;

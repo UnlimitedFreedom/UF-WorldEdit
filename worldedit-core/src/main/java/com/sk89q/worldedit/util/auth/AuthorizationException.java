@@ -24,6 +24,7 @@ import com.sk89q.worldedit.WorldEditException;
 /**
  * Raised when authorization is not granted.
  */
+@SuppressWarnings("serial")
 public class AuthorizationException extends WorldEditException {
 
     public AuthorizationException() {

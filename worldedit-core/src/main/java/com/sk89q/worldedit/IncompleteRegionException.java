@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Raised when a region is not fully defined.
  */
+@SuppressWarnings("serial")
 public class IncompleteRegionException extends WorldEditException {
 
 }

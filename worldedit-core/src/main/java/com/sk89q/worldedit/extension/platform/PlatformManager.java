@@ -45,6 +45,7 @@ import com.sk89q.worldedit.util.eventbus.Subscribe;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
@@ -63,6 +64,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  *
  * <p>This class is thread-safe.</p>
  */
+@SuppressWarnings("deprecation")
 public class PlatformManager {
 
     private static final Logger logger = Logger.getLogger(PlatformManager.class.getCanonicalName());
@@ -291,7 +293,6 @@ public class PlatformManager {
      * @return a {@link ServerInterface}
      * @throws IllegalStateException if no platform has been registered
      */
-    @SuppressWarnings("deprecation")
     public ServerInterface getServerInterface() throws IllegalStateException {
         return ServerInterfaceAdapter.adapt(queryCapability(Capability.USER_COMMANDS));
     }
@@ -304,7 +305,6 @@ public class PlatformManager {
         }
     }
 
-    @SuppressWarnings("deprecation")
     @Subscribe
     public void handleBlockInteract(BlockInteractEvent event) {
         // Create a proxy actor with a potentially different world for
@@ -385,7 +385,6 @@ public class PlatformManager {
         }
     }
 
-    @SuppressWarnings("deprecation")
     @Subscribe
     public void handlePlayerInput(PlayerInputEvent event) {
         // Create a proxy actor with a potentially different world for

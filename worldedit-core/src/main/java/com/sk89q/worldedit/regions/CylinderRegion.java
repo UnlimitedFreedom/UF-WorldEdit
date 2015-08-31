@@ -38,6 +38,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Represents a cylindrical region.
  */
+@SuppressWarnings("deprecation")
 public class CylinderRegion extends AbstractRegion implements FlatRegion {
 
     private Vector2D center;

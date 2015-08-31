@@ -144,7 +144,6 @@ public final class Masks {
      * @deprecated Please avoid if possible
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public static Mask wrap(final com.sk89q.worldedit.masks.Mask mask, final EditSession editSession) {
         checkNotNull(mask);
         return new AbstractMask() {

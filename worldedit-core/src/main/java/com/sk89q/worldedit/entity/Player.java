@@ -32,6 +32,7 @@ import com.sk89q.worldedit.world.World;
 /**
  * Represents a player
  */
+@SuppressWarnings("deprecation")
 public interface Player extends Entity, Actor {
 
     /**

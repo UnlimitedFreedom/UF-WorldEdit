@@ -22,6 +22,7 @@ package com.sk89q.worldedit.data;
 /**
  * @deprecated Switch to {@link com.sk89q.worldedit.world.DataException}
  */
+@SuppressWarnings("serial")
 @Deprecated
 public class DataException extends com.sk89q.worldedit.world.DataException {
 

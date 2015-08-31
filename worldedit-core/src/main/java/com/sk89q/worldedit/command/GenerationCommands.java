@@ -19,6 +19,8 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
 import com.sk89q.minecraft.util.commands.Logging;
@@ -136,7 +138,7 @@ public class GenerationCommands {
     @CommandPermissions("worldedit.generation.sphere")
     @Logging(PLACEMENT)
     public void hsphere(Player player, LocalSession session, EditSession editSession, Pattern pattern, String radiusString, @Optional("false") boolean raised) throws WorldEditException {
-        sphere(player, session, editSession, pattern, radiusString, raised, true);
+    	player.print(ChatColor.RED + "Spheres are not enabled on this server.");
     }
 
     @Command(
@@ -155,36 +157,7 @@ public class GenerationCommands {
     @CommandPermissions("worldedit.generation.sphere")
     @Logging(PLACEMENT)
     public void sphere(Player player, LocalSession session, EditSession editSession, Pattern pattern, String radiusString, @Optional("false") boolean raised, @Switch('h') boolean hollow) throws WorldEditException {
-        String[] radii = radiusString.split(",");
-        final double radiusX, radiusY, radiusZ;
-        switch (radii.length) {
-        case 1:
-            radiusX = radiusY = radiusZ = Math.max(1, Double.parseDouble(radii[0]));
-            break;
-
-        case 3:
-            radiusX = Math.max(1, Double.parseDouble(radii[0]));
-            radiusY = Math.max(1, Double.parseDouble(radii[1]));
-            radiusZ = Math.max(1, Double.parseDouble(radii[2]));
-            break;
-
-        default:
-            player.printError("You must either specify 1 or 3 radius values.");
-            return;
-        }
-
-        worldEdit.checkMaxRadius(radiusX);
-        worldEdit.checkMaxRadius(radiusY);
-        worldEdit.checkMaxRadius(radiusZ);
-
-        Vector pos = session.getPlacementPosition(player);
-        if (raised) {
-            pos = pos.add(0, radiusY, 0);
-        }
-
-        int affected = editSession.makeSphere(pos, Patterns.wrap(pattern), radiusX, radiusY, radiusZ, !hollow);
-        player.findFreePosition();
-        player.print(affected + " block(s) have been created.");
+    	player.print(ChatColor.RED + "Spheres are not enabled on this server.");
     }
 
     @Command(

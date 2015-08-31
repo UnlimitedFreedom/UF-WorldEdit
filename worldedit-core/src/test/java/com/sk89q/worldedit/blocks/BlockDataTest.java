@@ -21,12 +21,11 @@ package com.sk89q.worldedit.blocks;
 
 import com.sk89q.worldedit.CuboidClipboard.FlipDirection;
 import org.junit.Test;
-
 import java.util.TreeSet;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+@SuppressWarnings("deprecation")
 public class BlockDataTest {
 
     @Test

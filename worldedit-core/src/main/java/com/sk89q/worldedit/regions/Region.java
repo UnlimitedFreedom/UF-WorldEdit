@@ -27,12 +27,14 @@ import com.sk89q.worldedit.Vector2D;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.List;
 import java.util.Set;
 
 /**
  * Represents a physical shape.
  */
+@SuppressWarnings("deprecation")
 public interface Region extends Iterable<BlockVector>, Cloneable {
 
     /**

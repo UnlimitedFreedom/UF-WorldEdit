@@ -22,6 +22,7 @@ package com.sk89q.worldedit.session;
 /**
  * Raised when the session is missing.
  */
+@SuppressWarnings("serial")
 public class MissingSessionException extends Exception {
 
     public MissingSessionException() {

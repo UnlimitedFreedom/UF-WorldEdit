@@ -21,6 +21,7 @@ package com.sk89q.worldedit.util.io.file;
 
 import com.sk89q.worldedit.WorldEditException;
 
+@SuppressWarnings("serial")
 public class FilenameException extends WorldEditException {
 
     private String filename;

@@ -45,6 +45,7 @@ import java.io.File;
  * that is intended for implementations of WorldEdit to use to wrap
  * players that make use of WorldEdit.
  */
+@SuppressWarnings("deprecation")
 public abstract class AbstractPlayerActor implements Actor, Player, Cloneable {
 
     @Override
@@ -480,7 +481,6 @@ public abstract class AbstractPlayerActor implements Actor, Player, Cloneable {
         return false;
     }
 
-    @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override
     public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("Not supported");

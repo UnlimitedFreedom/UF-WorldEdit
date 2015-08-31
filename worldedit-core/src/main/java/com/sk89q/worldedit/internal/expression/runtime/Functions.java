@@ -36,7 +36,6 @@ import java.util.Random;
 /**
  * Contains all functions that can be used in expressions.
  */
-@SuppressWarnings("UnusedDeclaration")
 public final class Functions {
 
     private static class Overload {

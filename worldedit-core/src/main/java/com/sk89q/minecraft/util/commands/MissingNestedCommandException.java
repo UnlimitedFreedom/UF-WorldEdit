@@ -19,6 +19,7 @@
 
 package com.sk89q.minecraft.util.commands;
 
+@SuppressWarnings("serial")
 public class MissingNestedCommandException extends CommandUsageException {
 
     public MissingNestedCommandException(String message, String usage) {

@@ -49,7 +49,8 @@ public class FloatingTreeRemover implements BlockTool {
         return player.hasPermission("worldedit.tool.deltree");
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actPrimary(Platform server, LocalConfiguration config,
             Player player, LocalSession session, Location clicked) {
 
@@ -117,7 +118,8 @@ public class FloatingTreeRemover implements BlockTool {
      * @param origin any point contained in the floating tree
      * @return a set containing all blocks in the tree/shroom or null if this is not a floating tree/shroom.
      */
-    private Set<Vector> bfs(World world, Vector origin) throws MaxChangedBlocksException {
+    @SuppressWarnings("deprecation")
+	private Set<Vector> bfs(World world, Vector origin) throws MaxChangedBlocksException {
         final Set<Vector> visited = new HashSet<Vector>();
         final LinkedList<Vector> queue = new LinkedList<Vector>();
 

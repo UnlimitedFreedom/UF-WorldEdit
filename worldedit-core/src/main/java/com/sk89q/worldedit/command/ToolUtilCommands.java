@@ -19,6 +19,8 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
@@ -47,26 +49,8 @@ public class ToolUtilCommands {
     )
     @CommandPermissions("worldedit.superpickaxe")
     public void togglePickaxe(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-
-        String newState = args.getString(0, null);
-        if (session.hasSuperPickAxe()) {
-            if ("on".equals(newState)) {
-                player.printError("Super pick axe already enabled.");
-                return;
-            }
-
-            session.disableSuperPickAxe();
-            player.print("Super pick axe disabled.");
-        } else {
-            if ("off".equals(newState)) {
-                player.printError("Super pick axe already disabled.");
-                return;
-            }
-            session.enableSuperPickAxe();
-            player.print("Super pick axe enabled.");
+    		player.print(ChatColor.RED + "Super pickaxe is not enabled on this server.");
         }
-
-    }
 
     @Command(
         aliases = { "mask" },

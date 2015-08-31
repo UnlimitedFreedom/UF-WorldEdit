@@ -28,6 +28,7 @@ import com.sk89q.worldedit.blocks.BaseItemStack;
 import com.sk89q.worldedit.blocks.BlockID;
 import com.sk89q.worldedit.blocks.ItemType;
 
+@SuppressWarnings("deprecation")
 public class BukkitPlayerBlockBag extends BlockBag {
 
     private Player player;

@@ -107,7 +107,8 @@ public class NullRegion implements Region {
         this.world = world;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void setWorld(LocalWorld world) {
         setWorld((World) world);
     }

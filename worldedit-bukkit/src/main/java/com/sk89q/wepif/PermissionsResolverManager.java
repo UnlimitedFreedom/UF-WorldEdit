@@ -21,6 +21,7 @@ package com.sk89q.wepif;
 
 import com.sk89q.util.yaml.YAMLFormat;
 import com.sk89q.util.yaml.YAMLProcessor;
+
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Server;
 import org.bukkit.event.EventHandler;
@@ -272,7 +273,8 @@ public class PermissionsResolverManager implements PermissionsResolver {
         return isUpdated;
     }
 
-    public static class MissingPluginException extends Exception {
+    @SuppressWarnings("serial")
+	public static class MissingPluginException extends Exception {
     }
 
     class ServerListener implements org.bukkit.event.Listener {

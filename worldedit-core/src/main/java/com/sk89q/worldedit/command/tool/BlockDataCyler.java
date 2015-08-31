@@ -46,8 +46,10 @@ public class BlockDataCyler implements DoubleActionBlockTool {
 
         World world = (World) clicked.getExtent();
 
-        int type = world.getBlockType(clicked.toVector());
-        int data = world.getBlockData(clicked.toVector());
+        @SuppressWarnings("deprecation")
+		int type = world.getBlockType(clicked.toVector());
+        @SuppressWarnings("deprecation")
+		int data = world.getBlockData(clicked.toVector());
 
         if (!config.allowedDataCycleBlocks.isEmpty()
                 && !player.hasPermission("worldedit.override.data-cycler")

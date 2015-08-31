@@ -23,6 +23,7 @@ package com.sk89q.worldedit.bags;
 /**
  * @deprecated Block bags are currently not a supported feature of WorldEdit
  */
+@SuppressWarnings("serial")
 @Deprecated
 public class OutOfBlocksException extends BlockBagException {
 

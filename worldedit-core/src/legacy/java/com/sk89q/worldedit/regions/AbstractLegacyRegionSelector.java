@@ -24,6 +24,7 @@ import com.sk89q.worldedit.LocalSession;
 import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.extension.platform.Actor;
 
+@SuppressWarnings("deprecation")
 abstract class AbstractLegacyRegionSelector implements RegionSelector {
 
     @Deprecated

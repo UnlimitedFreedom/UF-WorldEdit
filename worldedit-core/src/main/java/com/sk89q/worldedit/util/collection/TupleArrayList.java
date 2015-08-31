@@ -30,6 +30,7 @@ import java.util.Map;
  * @param <A> the first type in the tuple
  * @param <B> the second type in the tuple
  */
+@SuppressWarnings("serial")
 public class TupleArrayList<A, B> extends ArrayList<Map.Entry<A, B>> {
 
     /**

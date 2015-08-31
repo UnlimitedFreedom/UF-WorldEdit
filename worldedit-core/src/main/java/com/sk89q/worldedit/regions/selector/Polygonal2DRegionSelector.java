@@ -33,6 +33,7 @@ import com.sk89q.worldedit.regions.selector.limit.SelectorLimits;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -41,6 +42,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Creates a {@code Polygonal2DRegion} from a user's selections.
  */
+@SuppressWarnings("deprecation")
 public class Polygonal2DRegionSelector extends com.sk89q.worldedit.regions.Polygonal2DRegionSelector implements RegionSelector, CUIRegion {
 
     private transient BlockVector pos1;

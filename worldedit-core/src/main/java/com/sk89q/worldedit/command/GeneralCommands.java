@@ -19,6 +19,10 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
+import me.StevenLawson.worldedit.WorldEditHandler;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
@@ -53,7 +57,7 @@ public class GeneralCommands {
         usage = "<limit>",
         desc = "Modify block change limit",
         min = 1,
-        max = 1
+        max = 2
     )
     @CommandPermissions("worldedit.limit")
     public void limit(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
@@ -69,10 +73,26 @@ public class GeneralCommands {
             }
         }
 
-        session.setBlockChangeLimit(limit);
+        final String targetName = (args.argsLength() == 2 ? args.getString(1) : null);
+                final LocalSession targetSession = (targetName == null ?
+                        WorldEdit.getInstance().getSessionManager().get(player) :
+                        WorldEdit.getInstance().getSessionManager().findByName(targetName));
+        
+                if (targetSession == null) {
+                    player.printError("Could not resolve player session for player: " + targetName);
+                    return;
+                }
+        
+                limit = WorldEditHandler.limitChanged(player, limit, targetName);
+                if (limit < -1) {
+                    return;
+                }
+                // TFM End
+        
+                targetSession.setBlockChangeLimit(limit);
 
         if (limit != -1) {
-            player.print("Block change limit set to " + limit + ". (Use //limit -1 to go back to the default.)");
+            player.print("Block change limit set to " + limit + ". (Use //limit 1000 to go back to the default.)");
         } else {
             player.print("Block change limit set to " + limit + ".");
         }
@@ -117,13 +137,7 @@ public class GeneralCommands {
     )
     @CommandPermissions("worldedit.global-mask")
     public void gmask(Player player, LocalSession session, EditSession editSession, @Optional Mask mask) throws WorldEditException {
-        if (mask == null) {
-            session.setMask((Mask) null);
-            player.print("Global mask disabled.");
-        } else {
-            session.setMask(mask);
-            player.print("Global mask set.");
-        }
+    	player.print(ChatColor.RED + "Global mask is not enabled on this server.");
     }
 
     @Command(

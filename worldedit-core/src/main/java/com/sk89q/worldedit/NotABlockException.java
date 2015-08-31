@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Raised when an item is used when a block was expected.
  */
+@SuppressWarnings("serial")
 public class NotABlockException extends WorldEditException {
 
     /**

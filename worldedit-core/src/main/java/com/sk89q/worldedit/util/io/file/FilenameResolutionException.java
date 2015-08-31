@@ -19,6 +19,7 @@
 
 package com.sk89q.worldedit.util.io.file;
 
+@SuppressWarnings("serial")
 public class FilenameResolutionException extends FilenameException {
 
     public FilenameResolutionException(String filename) {

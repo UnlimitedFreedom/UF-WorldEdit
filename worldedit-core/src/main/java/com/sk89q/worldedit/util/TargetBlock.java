@@ -34,7 +34,8 @@ import com.sk89q.worldedit.internal.LocalWorldAdapter;
  */
 public class TargetBlock {
 
-    private LocalWorld world;
+    @SuppressWarnings("deprecation")
+	private LocalWorld world;
     private int maxDistance;
     private double checkDistance, curDistance;
     private Vector targetPos = new Vector();
@@ -47,7 +48,8 @@ public class TargetBlock {
      * 
      * @param player player to work with
      */
-    public TargetBlock(LocalPlayer player) {
+    @SuppressWarnings("deprecation")
+	public TargetBlock(LocalPlayer player) {
         this.world = LocalWorldAdapter.adapt(player.getWorld());
         this.setValues(player.getPosition(), player.getYaw(), player.getPitch(),
                 300, 1.65, 0.2);
@@ -60,7 +62,8 @@ public class TargetBlock {
      * @param maxDistance how far it checks for blocks
      * @param checkDistance how often to check for blocks, the smaller the more precise
      */
-    public TargetBlock(LocalPlayer player, int maxDistance, double checkDistance) {
+    @SuppressWarnings("deprecation")
+	public TargetBlock(LocalPlayer player, int maxDistance, double checkDistance) {
         this((Player) player, maxDistance, checkDistance);
     }
 
@@ -71,7 +74,8 @@ public class TargetBlock {
      * @param maxDistance how far it checks for blocks
      * @param checkDistance how often to check for blocks, the smaller the more precise
      */
-    public TargetBlock(Player player, int maxDistance, double checkDistance) {
+    @SuppressWarnings("deprecation")
+	public TargetBlock(Player player, int maxDistance, double checkDistance) {
         this.world = LocalWorldAdapter.adapt(player.getWorld());
         this.setValues(player.getPosition(), player.getYaw(), player.getPitch(), maxDistance, 1.65, checkDistance);
     }
@@ -111,7 +115,8 @@ public class TargetBlock {
      * 
      * @return Block
      */
-    public BlockWorldVector getAnyTargetBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getAnyTargetBlock() {
         boolean searchForLastBlock = true;
         BlockWorldVector lastBlock = null;
         while (getNextBlock() != null) {
@@ -136,7 +141,8 @@ public class TargetBlock {
      * 
      * @return Block
      */
-    public BlockWorldVector getTargetBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getTargetBlock() {
         while (getNextBlock() != null && world.getBlockType(getCurrentBlock()) == 0) ;
         return getCurrentBlock();
     }
@@ -147,7 +153,8 @@ public class TargetBlock {
      * 
      * @return Block
      */
-    public BlockWorldVector getSolidTargetBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getSolidTargetBlock() {
         while (getNextBlock() != null && BlockType.canPassThrough(world.getBlock(getCurrentBlock()))) ;
         return getCurrentBlock();
     }
@@ -157,7 +164,8 @@ public class TargetBlock {
      * 
      * @return next block position
      */
-    public BlockWorldVector getNextBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getNextBlock() {
         prevPos = targetPos;
         do {
             curDistance += checkDistance;
@@ -183,7 +191,8 @@ public class TargetBlock {
      * 
      * @return block position
      */
-    public BlockWorldVector getCurrentBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getCurrentBlock() {
         if (curDistance > maxDistance) {
             return null;
         } else {
@@ -196,16 +205,19 @@ public class TargetBlock {
      * 
      * @return block position
      */
-    public BlockWorldVector getPreviousBlock() {
+    @SuppressWarnings("deprecation")
+	public BlockWorldVector getPreviousBlock() {
         return new BlockWorldVector(world, prevPos);
     }
 
-    public WorldVectorFace getAnyTargetBlockFace() {
+    @SuppressWarnings("deprecation")
+	public WorldVectorFace getAnyTargetBlockFace() {
         getAnyTargetBlock();
         return WorldVectorFace.getWorldVectorFace(world, getCurrentBlock(), getPreviousBlock());
     }
 
-    public WorldVectorFace getTargetBlockFace() {
+    @SuppressWarnings("deprecation")
+	public WorldVectorFace getTargetBlockFace() {
         getAnyTargetBlock();
         return WorldVectorFace.getWorldVectorFace(world, getCurrentBlock(), getPreviousBlock());
     }

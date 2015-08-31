@@ -24,6 +24,7 @@ import com.sk89q.worldedit.internal.expression.ExpressionException;
 /**
  * Thrown when there's a problem during expression evaluation.
  */
+@SuppressWarnings("serial")
 public class EvaluationException extends ExpressionException {
 
     public EvaluationException(int position) {

@@ -204,7 +204,6 @@ public class LocalWorldAdapter extends LocalWorld {
         return world.getWorldData();
     }
 
-    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
     @Override
     public boolean equals(Object other) {
         return world.equals(other);

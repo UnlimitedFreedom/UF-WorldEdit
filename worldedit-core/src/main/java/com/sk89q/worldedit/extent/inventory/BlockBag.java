@@ -25,6 +25,7 @@ import com.sk89q.worldedit.blocks.*;
 /**
  * Represents a source to get blocks from and store removed ones.
  */
+@SuppressWarnings("deprecation")
 public abstract class BlockBag {
 
     /**

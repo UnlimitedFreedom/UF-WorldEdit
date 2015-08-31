@@ -21,11 +21,13 @@ package com.sk89q.worldedit.bukkit.entity;
 
 import com.sk89q.worldedit.Location;
 import com.sk89q.worldedit.bukkit.BukkitUtil;
+
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.ExperienceOrb;
 
 import java.util.UUID;
 
+@SuppressWarnings("deprecation")
 public class BukkitExpOrb extends BukkitEntity {
 
     private final int amount;

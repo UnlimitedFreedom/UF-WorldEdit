@@ -128,7 +128,8 @@ public class RequestSelection implements Region {
         return getRegion().getWorld();
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void setWorld(LocalWorld world) {
         setWorld((World) world);
     }

@@ -19,17 +19,17 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
 import com.sk89q.worldedit.*;
-import com.sk89q.worldedit.command.tool.AreaPickaxe;
-import com.sk89q.worldedit.command.tool.RecursivePickaxe;
-import com.sk89q.worldedit.command.tool.SinglePickaxe;
 import com.sk89q.worldedit.entity.Player;
 
 public class SuperPickaxeCommands {
-    private final WorldEdit we;
+    @SuppressWarnings("unused")
+	private final WorldEdit we;
 
     public SuperPickaxeCommands(WorldEdit we) {
         this.we = we;
@@ -44,10 +44,7 @@ public class SuperPickaxeCommands {
     )
     @CommandPermissions("worldedit.superpickaxe")
     public void single(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-
-        session.setSuperPickaxe(new SinglePickaxe());
-        session.enableSuperPickAxe();
-        player.print("Mode changed. Left click with a pickaxe. // to disable.");
+        player.print(ChatColor.DARK_RED + "Super pickaxe has been disabled in the WorldEdit configuration.");
     }
 
     @Command(
@@ -59,18 +56,7 @@ public class SuperPickaxeCommands {
     )
     @CommandPermissions("worldedit.superpickaxe.area")
     public void area(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-
-        LocalConfiguration config = we.getConfiguration();
-        int range = args.getInteger(0);
-
-        if (range > config.maxSuperPickaxeSize) {
-            player.printError("Maximum range: " + config.maxSuperPickaxeSize);
-            return;
-        }
-
-        session.setSuperPickaxe(new AreaPickaxe(range));
-        session.enableSuperPickAxe();
-        player.print("Mode changed. Left click with a pickaxe. // to disable.");
+        player.print(ChatColor.DARK_RED + "Super pickaxe has been disabled in the WorldEdit configuration.");
     }
 
     @Command(
@@ -82,17 +68,6 @@ public class SuperPickaxeCommands {
     )
     @CommandPermissions("worldedit.superpickaxe.recursive")
     public void recursive(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-
-        LocalConfiguration config = we.getConfiguration();
-        double range = args.getDouble(0);
-
-        if (range > config.maxSuperPickaxeSize) {
-            player.printError("Maximum range: " + config.maxSuperPickaxeSize);
-            return;
-        }
-
-        session.setSuperPickaxe(new RecursivePickaxe(range));
-        session.enableSuperPickAxe();
-        player.print("Mode changed. Left click with a pickaxe. // to disable.");
+        player.print("Super pickaxe has been disabled in the WorldEdit configuration.");
     }
 }

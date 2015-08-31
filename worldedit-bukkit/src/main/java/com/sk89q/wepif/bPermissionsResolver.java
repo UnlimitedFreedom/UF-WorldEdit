@@ -20,8 +20,10 @@
 package com.sk89q.wepif;
 
 import com.sk89q.util.yaml.YAMLProcessor;
+
 import de.bananaco.bpermissions.api.ApiLayer;
 import de.bananaco.bpermissions.api.util.CalculableType;
+
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -53,7 +55,8 @@ public class bPermissionsResolver implements PermissionsResolver {
         return "bPermissions detected! Using bPermissions for permissions";
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean hasPermission(String name, String permission) {
         return hasPermission(server.getOfflinePlayer(name), permission);
     }
@@ -63,12 +66,14 @@ public class bPermissionsResolver implements PermissionsResolver {
         return ApiLayer.hasPermission(worldName, CalculableType.USER, name, permission);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean inGroup(String player, String group) {
         return inGroup(server.getOfflinePlayer(player), group);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public String[] getGroups(String player) {
         return getGroups(server.getOfflinePlayer(player));
     }

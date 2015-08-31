@@ -20,12 +20,14 @@
 package com.sk89q.minecraft.util.commands;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+@SuppressWarnings("serial")
 public class CommandException extends Exception {
 
     private List<String> commandStack = new ArrayList<String>();

@@ -37,7 +37,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class PasteBuilder {
 
     private final Clipboard clipboard;
-    private final WorldData worldData;
+    @SuppressWarnings("unused")
+	private final WorldData worldData;
     private final Transform transform;
     private final Extent targetExtent;
     private final WorldData targetWorldData;

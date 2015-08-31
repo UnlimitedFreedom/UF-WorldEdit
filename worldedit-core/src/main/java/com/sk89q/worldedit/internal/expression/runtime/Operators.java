@@ -22,7 +22,6 @@ package com.sk89q.worldedit.internal.expression.runtime;
 /**
  * Contains all unary and binary operators.
  */
-@SuppressWarnings("UnusedDeclaration")
 public final class Operators {
 
     private Operators() {

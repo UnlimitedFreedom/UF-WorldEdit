@@ -24,6 +24,7 @@ import com.sk89q.worldedit.util.command.parametric.ParameterException;
 /**
  * Thrown when there is a missing parameter.
  */
+@SuppressWarnings("serial")
 public class MissingParameterException extends ParameterException {
 
 }

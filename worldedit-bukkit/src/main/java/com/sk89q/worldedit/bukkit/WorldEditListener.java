@@ -27,6 +27,7 @@ import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.WorldVector;
 import com.sk89q.worldedit.internal.LocalWorldAdapter;
 import com.sk89q.worldedit.world.World;
+
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
 import org.bukkit.event.Event.Result;
@@ -41,6 +42,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 /**
  * Handles all events thrown in relation to a Player
  */
+@SuppressWarnings("deprecation")
 public class WorldEditListener implements Listener {
 
     private WorldEditPlugin plugin;

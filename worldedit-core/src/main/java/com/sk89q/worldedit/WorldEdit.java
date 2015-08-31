@@ -53,6 +53,7 @@ import com.sk89q.worldedit.util.logging.WorldEditPrefixHandler;
 import com.sk89q.worldedit.world.registry.BundledBlockData;
 
 import javax.script.ScriptException;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -82,6 +83,7 @@ import static com.sk89q.worldedit.event.platform.Interaction.OPEN;
  * method {@link WorldEdit#getInstance()}, which is shared among all
  * platforms within the same classloader hierarchy.</p>
  */
+@SuppressWarnings("deprecation")
 public class WorldEdit {
 
     public static final Logger logger = Logger.getLogger(WorldEdit.class.getCanonicalName());
@@ -224,7 +226,6 @@ public class WorldEdit {
     /**
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromInput(String, ParserContext)}
      */
-    @SuppressWarnings("deprecation")
     @Deprecated
     public BaseBlock getBlock(Player player, String arg, boolean allAllowed) throws WorldEditException {
         return getBlock(player, arg, allAllowed, false);
@@ -233,7 +234,6 @@ public class WorldEdit {
     /**
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromInput(String, ParserContext)}
      */
-    @SuppressWarnings("deprecation")
     @Deprecated
     public BaseBlock getBlock(Player player, String arg, boolean allAllowed, boolean allowNoData) throws WorldEditException {
         ParserContext context = new ParserContext();
@@ -248,7 +248,6 @@ public class WorldEdit {
     /**
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromInput(String, ParserContext)}
      */
-    @SuppressWarnings("deprecation")
     @Deprecated
     public BaseBlock getBlock(Player player, String id) throws WorldEditException {
         return getBlock(player, id, false);
@@ -258,7 +257,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromListInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Set<BaseBlock> getBlocks(Player player, String list, boolean allAllowed, boolean allowNoData) throws WorldEditException {
         String[] items = list.split(",");
         Set<BaseBlock> blocks = new HashSet<BaseBlock>();
@@ -272,7 +270,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Set<BaseBlock> getBlocks(Player player, String list, boolean allAllowed) throws WorldEditException {
         return getBlocks(player, list, allAllowed, false);
     }
@@ -281,7 +278,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromListInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Set<BaseBlock> getBlocks(Player player, String list) throws WorldEditException {
         return getBlocks(player, list, false);
     }
@@ -290,7 +286,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getBlockFactory()} and {@link BlockFactory#parseFromListInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Set<Integer> getBlockIDs(Player player, String list, boolean allBlocksAllowed) throws WorldEditException {
         String[] items = list.split(",");
         Set<Integer> blocks = new HashSet<Integer>();
@@ -304,7 +299,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getPatternFactory()} and {@link BlockFactory#parseFromInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Pattern getBlockPattern(Player player, String input) throws WorldEditException {
         ParserContext context = new ParserContext();
         context.setActor(player);
@@ -317,7 +311,6 @@ public class WorldEdit {
      * @deprecated Use {@link #getMaskFactory()} ()} and {@link MaskFactory#parseFromInput(String, ParserContext)}
      */
     @Deprecated
-    @SuppressWarnings("deprecation")
     public Mask getBlockMask(Player player, LocalSession session, String input) throws WorldEditException {
         ParserContext context = new ParserContext();
         context.setActor(player);

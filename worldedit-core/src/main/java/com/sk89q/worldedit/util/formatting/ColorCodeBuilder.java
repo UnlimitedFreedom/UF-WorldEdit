@@ -148,7 +148,8 @@ public class ColorCodeBuilder {
      * @param lineLength the maximum line length
      * @return a list of lines
      */
-    private String[] wordWrap(String rawString, int lineLength) {
+    @SuppressWarnings("unused")
+	private String[] wordWrap(String rawString, int lineLength) {
         // A null string is a single line
         if (rawString == null) {
             return new String[] {""};

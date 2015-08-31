@@ -31,6 +31,7 @@ import com.sk89q.worldedit.regions.selector.limit.SelectorLimits;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +40,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Creates a {@code EllipsoidRegionSelector} from a user's selections.
  */
+@SuppressWarnings("deprecation")
 public class EllipsoidRegionSelector extends com.sk89q.worldedit.regions.EllipsoidRegionSelector implements RegionSelector, CUIRegion {
 
     protected transient EllipsoidRegion region;

@@ -22,5 +22,6 @@ package com.sk89q.worldedit.extent.inventory;
 /**
  * Thrown when a block bag detects a problem.
  */
+@SuppressWarnings("serial")
 public class BlockBagException extends Exception {
 }

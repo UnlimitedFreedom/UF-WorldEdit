@@ -25,6 +25,7 @@ import com.sk89q.worldedit.blocks.BaseBlock;
 /**
  * Pattern that repeats the clipboard.
  */
+@SuppressWarnings("deprecation")
 public class ClipboardPattern implements Pattern {
 
     private CuboidClipboard clipboard;

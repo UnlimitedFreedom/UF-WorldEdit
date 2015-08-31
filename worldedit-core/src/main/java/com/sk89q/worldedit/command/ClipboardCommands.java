@@ -56,7 +56,8 @@ import static com.sk89q.minecraft.util.commands.Logging.LogMode.REGION;
  */
 public class ClipboardCommands {
 
-    private final WorldEdit worldEdit;
+    @SuppressWarnings("unused")
+	private final WorldEdit worldEdit;
 
     /**
      * Create a new instance.
@@ -126,7 +127,8 @@ public class ClipboardCommands {
         Operations.completeLegacy(copy);
         session.setClipboard(new ClipboardHolder(clipboard, editSession.getWorld().getWorldData()));
 
-        player.print(region.getArea() + " block(s) were copied.");
+        player.print(region.getArea() + " block(s) were cut.");
+        player.print("Don't use this often as admins may think you are griefing.");
     }
 
     @Command(
@@ -210,7 +212,8 @@ public class ClipboardCommands {
     public void flip(Player player, LocalSession session, EditSession editSession,
                      @Optional(Direction.AIM) @Direction Vector direction) throws WorldEditException {
         ClipboardHolder holder = session.getClipboard();
-        Clipboard clipboard = holder.getClipboard();
+        @SuppressWarnings("unused")
+		Clipboard clipboard = holder.getClipboard();
         AffineTransform transform = new AffineTransform();
         transform = transform.scale(direction.positive().multiply(-2).add(1, 1, 1));
         holder.setTransform(holder.getTransform().combine(transform));

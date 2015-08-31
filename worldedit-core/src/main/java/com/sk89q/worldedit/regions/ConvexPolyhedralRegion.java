@@ -26,6 +26,7 @@ import com.sk89q.worldedit.regions.polyhedron.Triangle;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -35,6 +36,7 @@ import java.util.Set;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+@SuppressWarnings("deprecation")
 public class ConvexPolyhedralRegion extends AbstractRegion {
 
     /**

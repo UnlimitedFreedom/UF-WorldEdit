@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Thrown when an invalid item is specified.
  */
+@SuppressWarnings("serial")
 public class InvalidItemException extends DisallowedItemException {
 
     public InvalidItemException(String type, String message) {

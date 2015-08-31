@@ -23,10 +23,12 @@ import com.sk89q.worldedit.session.SessionKey;
 import com.sk89q.worldedit.util.auth.AuthorizationException;
 import com.sk89q.worldedit.extension.platform.Actor;
 import com.sk89q.worldedit.internal.cui.CUIEvent;
+
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import javax.annotation.Nullable;
+
 import java.io.File;
 import java.util.UUID;
 
@@ -41,7 +43,8 @@ public class BukkitCommandSender implements Actor {
     private static final UUID DEFAULT_ID = UUID.fromString("a233eb4b-4cab-42cd-9fd9-7e7b9a3f74be");
 
     private CommandSender sender;
-    private WorldEditPlugin plugin;
+    @SuppressWarnings("unused")
+	private WorldEditPlugin plugin;
 
     public BukkitCommandSender(WorldEditPlugin plugin, CommandSender sender) {
         checkNotNull(plugin);

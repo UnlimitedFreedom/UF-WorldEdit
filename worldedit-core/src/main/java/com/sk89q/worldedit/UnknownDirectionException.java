@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Thrown when an unknown direction is specified or detected.
  */
+@SuppressWarnings("serial")
 public class UnknownDirectionException extends WorldEditException {
 
     private String dir;

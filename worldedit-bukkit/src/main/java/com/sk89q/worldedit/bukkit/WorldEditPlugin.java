@@ -48,6 +48,7 @@ import com.sk89q.worldedit.regions.CylinderRegion;
 import com.sk89q.worldedit.regions.Polygonal2DRegion;
 import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldedit.regions.RegionSelector;
+
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -56,6 +57,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nullable;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -87,8 +89,8 @@ public class WorldEditPlugin extends JavaPlugin implements TabCompleter {
     /**
      * Called on plugin enable.
      */
-    @SuppressWarnings("AccessStaticViaInstance")
-    @Override
+    @SuppressWarnings("static-access")
+	@Override
     public void onEnable() {
         this.INSTANCE = this;
 
@@ -189,7 +191,8 @@ public class WorldEditPlugin extends JavaPlugin implements TabCompleter {
      *
      * @param name the filename
      */
-    protected void createDefaultConfiguration(String name) {
+    @SuppressWarnings("resource")
+	protected void createDefaultConfiguration(String name) {
         File actual = new File(getDataFolder(), name);
         if (!actual.exists()) {
             InputStream input = null;

@@ -22,5 +22,6 @@ package com.sk89q.worldedit.extent.inventory;
 /**
  * Thrown when a block that can't be placed is used.
  */
+@SuppressWarnings("serial")
 public class UnplaceableBlockException extends BlockBagException {
 }

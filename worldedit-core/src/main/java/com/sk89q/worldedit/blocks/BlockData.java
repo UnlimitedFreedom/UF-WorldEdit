@@ -24,6 +24,7 @@ import com.sk89q.worldedit.CuboidClipboard.FlipDirection;
 /**
  * Block data related classes.
  */
+@SuppressWarnings("deprecation")
 public final class BlockData {
 
     private BlockData() {

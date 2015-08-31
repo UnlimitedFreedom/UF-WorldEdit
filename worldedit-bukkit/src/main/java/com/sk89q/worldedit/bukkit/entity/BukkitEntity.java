@@ -22,10 +22,12 @@ package com.sk89q.worldedit.bukkit.entity;
 import com.sk89q.worldedit.LocalEntity;
 import com.sk89q.worldedit.Location;
 import com.sk89q.worldedit.bukkit.BukkitUtil;
+
 import org.bukkit.entity.EntityType;
 
 import java.util.UUID;
 
+@SuppressWarnings("deprecation")
 public class BukkitEntity extends LocalEntity {
 
     private final EntityType type;

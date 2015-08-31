@@ -24,6 +24,7 @@ import com.sk89q.worldedit.WorldEditException;
 /**
  * Thrown if the world has been unloaded.
  */
+@SuppressWarnings("serial")
 class WorldUnloadedException extends WorldEditException {
 
     /**

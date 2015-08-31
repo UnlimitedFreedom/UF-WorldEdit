@@ -23,6 +23,7 @@ package com.sk89q.worldedit.session;
  * Thrown if the session cannot be persisted
  * (because {@link SessionKey#isPersistent()} returns false).
  */
+@SuppressWarnings("serial")
 public class TransientSessionException extends Exception {
 
     public TransientSessionException() {

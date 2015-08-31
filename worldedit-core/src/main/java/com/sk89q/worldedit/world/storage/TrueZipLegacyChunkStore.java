@@ -20,6 +20,7 @@
 package com.sk89q.worldedit.world.storage;
 
 import com.sk89q.worldedit.world.DataException;
+
 import de.schlichtherle.util.zip.ZipEntry;
 import de.schlichtherle.util.zip.ZipFile;
 
@@ -36,7 +37,8 @@ import java.util.zip.ZipException;
  */
 public class TrueZipLegacyChunkStore extends LegacyChunkStore {
 
-    private File zipFile;
+    @SuppressWarnings("unused")
+	private File zipFile;
     private ZipFile zip;
     private String folder;
 

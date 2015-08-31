@@ -55,7 +55,8 @@ public abstract class AbstractRegion implements Region {
         return world;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void setWorld(LocalWorld world) {
         setWorld((World) world);
     }

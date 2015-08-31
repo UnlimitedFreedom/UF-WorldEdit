@@ -28,7 +28,6 @@ import com.sk89q.worldedit.extension.input.InputParseException;
  *
  * @param <E> the element
  */
-@SuppressWarnings("ProtectedField")
 public abstract class InputParser<E> {
 
     protected final WorldEdit worldEdit;

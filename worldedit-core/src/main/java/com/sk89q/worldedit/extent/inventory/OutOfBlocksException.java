@@ -22,5 +22,6 @@ package com.sk89q.worldedit.extent.inventory;
 /**
  * Thrown when there are no more blocks left.
  */
+@SuppressWarnings("serial")
 public class OutOfBlocksException extends BlockBagException {
 }

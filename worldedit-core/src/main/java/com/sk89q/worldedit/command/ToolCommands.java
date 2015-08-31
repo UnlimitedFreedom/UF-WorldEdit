@@ -19,6 +19,8 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
@@ -28,8 +30,8 @@ import com.sk89q.worldedit.blocks.ItemType;
 import com.sk89q.worldedit.entity.Player;
 import com.sk89q.worldedit.patterns.Pattern;
 import com.sk89q.worldedit.command.tool.*;
-import com.sk89q.worldedit.util.TreeGenerator;
 
+@SuppressWarnings("deprecation")
 public class ToolCommands {
     private final WorldEdit we;
 
@@ -73,21 +75,8 @@ public class ToolCommands {
         max = 1
     )
     @CommandPermissions("worldedit.tool.tree")
-    @SuppressWarnings("deprecation")
     public void tree(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-
-        TreeGenerator.TreeType type = args.argsLength() > 0 ?
-                type = TreeGenerator.lookup(args.getString(0))
-                : TreeGenerator.TreeType.TREE;
-
-        if (type == null) {
-            player.printError("Tree type '" + args.getString(0) + "' is unknown.");
-            return;
-        }
-
-        session.setTool(player.getItemInHand(), new TreePlanter(new TreeGenerator(type)));
-        player.print("Tree tool bound to "
-                + ItemType.toHeldName(player.getItemInHand()) + ".");
+    	player.print(ChatColor.RED + "Disabled due to tree griefers.");
     }
 
     @Command(
@@ -100,7 +89,7 @@ public class ToolCommands {
     @CommandPermissions("worldedit.tool.replacer")
     public void repl(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
 
-        BaseBlock targetBlock = we.getBlock(player, args.getString(0));
+		BaseBlock targetBlock = we.getBlock(player, args.getString(0));
         session.setTool(player.getItemInHand(), new BlockReplacer(targetBlock));
         player.print("Block replacer tool bound to "
                 + ItemType.toHeldName(player.getItemInHand()) + ".");
@@ -139,10 +128,11 @@ public class ToolCommands {
             return;
         }
 
-        Pattern pattern = we.getBlockPattern(player, args.getString(0));
+		Pattern pattern = we.getBlockPattern(player, args.getString(0));
         session.setTool(player.getItemInHand(), new FloodFillTool(range, pattern));
         player.print("Block flood fill tool bound to "
                 + ItemType.toHeldName(player.getItemInHand()) + ".");
+        player.print(ChatColor.RED + "Do not grief with this or you will lose your privilege of using it.");
     }
 
     @Command(
@@ -184,11 +174,12 @@ public class ToolCommands {
     @CommandPermissions("worldedit.tool.lrbuild")
     public void longrangebuildtool(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
 
-        BaseBlock secondary = we.getBlock(player, args.getString(0));
-        BaseBlock primary = we.getBlock(player, args.getString(1));
+		BaseBlock secondary = we.getBlock(player, args.getString(0));
+		BaseBlock primary = we.getBlock(player, args.getString(1));
         session.setTool(player.getItemInHand(), new LongRangeBuildTool(primary, secondary));
         player.print("Long-range building tool bound to " + ItemType.toHeldName(player.getItemInHand()) + ".");
         player.print("Left-click set to " + ItemType.toName(secondary.getType()) + "; right-click set to "
                 + ItemType.toName(primary.getType()) + ".");
+        player.print(ChatColor.RED + "Do not grief with this or you will lose your privilege of using it.");
     }
 }

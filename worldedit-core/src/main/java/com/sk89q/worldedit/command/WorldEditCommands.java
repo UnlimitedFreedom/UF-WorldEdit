@@ -52,8 +52,9 @@ public class WorldEditCommands {
         max = 0
     )
     public void version(Actor actor) throws WorldEditException {
-        actor.print("WorldEdit version " + WorldEdit.getVersion());
+        actor.print("WorldEdit version 6.1.1 for RubyFreedom");
         actor.print("https://github.com/sk89q/worldedit/");
+        actor.print("This version has been specifically designed for freedom servers.");
 
         PlatformManager pm = we.getPlatformManager();
 

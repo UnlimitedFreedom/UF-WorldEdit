@@ -24,6 +24,7 @@ import com.sk89q.worldedit.WorldEditException;
 /**
  * Thrown when parsed input results in an error.
  */
+@SuppressWarnings("serial")
 public class InputParseException extends WorldEditException {
 
     /**

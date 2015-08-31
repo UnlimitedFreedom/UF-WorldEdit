@@ -20,6 +20,7 @@
 package com.sk89q.worldedit.bukkit.selections;
 
 import com.sk89q.worldedit.regions.selector.CylinderRegionSelector;
+
 import org.bukkit.World;
 
 import com.sk89q.worldedit.BlockVector2D;
@@ -31,6 +32,7 @@ import com.sk89q.worldedit.regions.RegionSelector;
 /**
  * A selection representing a {@link CylinderRegion}
  */
+@SuppressWarnings("deprecation")
 public class CylinderSelection extends RegionSelection {
 
     private CylinderRegion cylRegion;

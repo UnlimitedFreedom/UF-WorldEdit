@@ -21,6 +21,7 @@ package com.sk89q.worldedit.command;
 
 import com.sk89q.worldedit.WorldEditException;
 
+@SuppressWarnings("serial")
 public class InsufficientArgumentsException extends WorldEditException {
 
     public InsufficientArgumentsException(String error) {

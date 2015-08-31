@@ -22,6 +22,7 @@ package com.sk89q.worldedit.world;
 /**
  * Thrown when there is an exception related to data handling.
  */
+@SuppressWarnings("serial")
 public class DataException extends Exception {
 
     public DataException(String msg) {

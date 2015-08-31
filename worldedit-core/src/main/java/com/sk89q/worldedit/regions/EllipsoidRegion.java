@@ -26,12 +26,14 @@ import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.Vector2D;
 import com.sk89q.worldedit.world.World;
 import com.sk89q.worldedit.world.storage.ChunkStore;
+
 import java.util.Set;
 import java.util.HashSet;
 
 /**
  * Represents an ellipsoid region.
  */
+@SuppressWarnings("deprecation")
 public class EllipsoidRegion extends AbstractRegion {
 
     /**

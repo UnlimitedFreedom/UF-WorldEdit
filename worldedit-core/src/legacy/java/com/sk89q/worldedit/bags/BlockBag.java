@@ -25,9 +25,7 @@ import com.sk89q.worldedit.blocks.*;
 /**
  * @deprecated Block bags are currently not a supported feature of WorldEdit
  */
-@SuppressWarnings("deprecation")
 @Deprecated
-
 public abstract class BlockBag {
 
     /**

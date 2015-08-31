@@ -29,6 +29,7 @@ import com.sk89q.worldedit.regions.selector.limit.SelectorLimits;
 import com.sk89q.worldedit.world.World;
 
 import javax.annotation.Nullable;
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Creates a {@code CylinderRegionSelector} from a user's selections.
  */
+@SuppressWarnings("deprecation")
 public class CylinderRegionSelector extends com.sk89q.worldedit.regions.CylinderRegionSelector implements RegionSelector, CUIRegion {
 
     protected static transient final NumberFormat NUMBER_FORMAT;

@@ -35,6 +35,7 @@ import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldedit.util.TreeGenerator;
 import com.sk89q.worldedit.world.biome.BaseBiome;
 import com.sk89q.worldedit.world.registry.WorldData;
+
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.TreeType;
@@ -49,6 +50,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nullable;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -60,6 +62,7 @@ import java.util.logging.Logger;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+@SuppressWarnings("deprecation")
 public class BukkitWorld extends LocalWorld {
 
     private static final Logger logger = WorldEdit.logger;
@@ -78,7 +81,6 @@ public class BukkitWorld extends LocalWorld {
      *
      * @param world the world
      */
-    @SuppressWarnings("unchecked")
     public BukkitWorld(World world) {
         this.worldRef = new WeakReference<World>(world);
     }
@@ -328,7 +330,6 @@ public class BukkitWorld extends LocalWorld {
         world.dropItemNaturally(BukkitUtil.toLocation(world, pt), bukkitItem);
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public boolean isValidBlockType(int type) {
         return Material.getMaterial(type) != null && Material.getMaterial(type).isBlock();
@@ -420,7 +421,6 @@ public class BukkitWorld extends LocalWorld {
         }
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public BaseBlock getLazyBlock(Vector position) {
         World world = getWorld();

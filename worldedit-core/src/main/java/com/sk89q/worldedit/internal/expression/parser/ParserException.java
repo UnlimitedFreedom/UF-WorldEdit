@@ -24,6 +24,7 @@ import com.sk89q.worldedit.internal.expression.ExpressionException;
 /**
  * Thrown when the parser encounters a problem.
  */
+@SuppressWarnings("serial")
 public class ParserException extends ExpressionException {
 
     public ParserException(int position) {

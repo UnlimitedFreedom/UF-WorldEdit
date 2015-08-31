@@ -22,6 +22,7 @@ package com.sk89q.worldedit.util.command.parametric;
 /**
  * Thrown if there is an error with a parameter.
  */
+@SuppressWarnings("serial")
 public class ParameterException extends Exception {
 
     public ParameterException() {

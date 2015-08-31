@@ -19,6 +19,8 @@
 
 package com.sk89q.worldedit.command;
 
+import org.bukkit.ChatColor;
+
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
@@ -26,15 +28,10 @@ import com.sk89q.worldedit.*;
 import com.sk89q.worldedit.blocks.BaseBlock;
 import com.sk89q.worldedit.blocks.BlockID;
 import com.sk89q.worldedit.command.tool.BrushTool;
-import com.sk89q.worldedit.command.tool.brush.ButcherBrush;
 import com.sk89q.worldedit.command.tool.brush.ClipboardBrush;
-import com.sk89q.worldedit.command.tool.brush.CylinderBrush;
 import com.sk89q.worldedit.command.tool.brush.GravityBrush;
-import com.sk89q.worldedit.command.tool.brush.HollowCylinderBrush;
-import com.sk89q.worldedit.command.tool.brush.HollowSphereBrush;
 import com.sk89q.worldedit.command.tool.brush.SmoothBrush;
 import com.sk89q.worldedit.command.tool.brush.SphereBrush;
-import com.sk89q.worldedit.command.util.CreatureButcher;
 import com.sk89q.worldedit.entity.Player;
 import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import com.sk89q.worldedit.function.mask.BlockMask;
@@ -77,19 +74,7 @@ public class BrushCommands {
     @CommandPermissions("worldedit.brush.sphere")
     public void sphereBrush(Player player, LocalSession session, EditSession editSession, Pattern fill,
                             @Optional("2") double radius, @Switch('h') boolean hollow) throws WorldEditException {
-        worldEdit.checkMaxBrushRadius(radius);
-
-        BrushTool tool = session.getBrushTool(player.getItemInHand());
-        tool.setFill(fill);
-        tool.setSize(radius);
-
-        if (hollow) {
-            tool.setBrush(new HollowSphereBrush(), "worldedit.brush.sphere");
-        } else {
-            tool.setBrush(new SphereBrush(), "worldedit.brush.sphere");
-        }
-
-        player.print(String.format("Sphere brush shape equipped (%.0f).", radius));
+    	player.print(ChatColor.RED + "Brush spheres are not enabled on this server.");
     }
 
     @Command(
@@ -106,20 +91,7 @@ public class BrushCommands {
     @CommandPermissions("worldedit.brush.cylinder")
     public void cylinderBrush(Player player, LocalSession session, EditSession editSession, Pattern fill,
                               @Optional("2") double radius, @Optional("1") int height, @Switch('h') boolean hollow) throws WorldEditException {
-        worldEdit.checkMaxBrushRadius(radius);
-        worldEdit.checkMaxBrushRadius(height);
-
-        BrushTool tool = session.getBrushTool(player.getItemInHand());
-        tool.setFill(fill);
-        tool.setSize(radius);
-
-        if (hollow) {
-            tool.setBrush(new HollowCylinderBrush(height), "worldedit.brush.cylinder");
-        } else {
-            tool.setBrush(new CylinderBrush(height), "worldedit.brush.cylinder");
-        }
-
-        player.print(String.format("Cylinder brush shape equipped (%.0f by %d).", radius, height));
+        player.print(ChatColor.RED + "Cylinder brushes are not enabled on this server.");
     }
 
     @Command(
@@ -242,28 +214,6 @@ public class BrushCommands {
     )
     @CommandPermissions("worldedit.brush.butcher")
     public void butcherBrush(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-        LocalConfiguration config = worldEdit.getConfiguration();
-
-        double radius = args.argsLength() > 0 ? args.getDouble(0) : 5;
-        double maxRadius = config.maxBrushRadius;
-        // hmmmm not horribly worried about this because -1 is still rather efficient,
-        // the problem arises when butcherMaxRadius is some really high number but not infinite
-        // - original idea taken from https://github.com/sk89q/worldedit/pull/198#issuecomment-6463108
-        if (player.hasPermission("worldedit.butcher")) {
-            maxRadius = Math.max(config.maxBrushRadius, config.butcherMaxRadius);
-        }
-        if (radius > maxRadius) {
-            player.printError("Maximum allowed brush radius: " + maxRadius);
-            return;
-        }
-
-        CreatureButcher flags = new CreatureButcher(player);
-        flags.fromCommand(args);
-
-        BrushTool tool = session.getBrushTool(player.getItemInHand());
-        tool.setSize(radius);
-        tool.setBrush(new ButcherBrush(flags), "worldedit.brush.butcher");
-
-        player.print(String.format("Butcher brush equipped (%.0f).", radius));
+        player.print("");
     }
 }

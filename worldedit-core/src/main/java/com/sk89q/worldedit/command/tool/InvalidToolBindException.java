@@ -21,6 +21,7 @@ package com.sk89q.worldedit.command.tool;
 
 import com.sk89q.worldedit.WorldEditException;
 
+@SuppressWarnings("serial")
 public class InvalidToolBindException extends WorldEditException {
 
     private int itemId;

@@ -38,7 +38,8 @@ public class QueryTool implements BlockTool {
         return player.hasPermission("worldedit.tool.info");
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actPrimary(Platform server, LocalConfiguration config, Player player, LocalSession session, com.sk89q.worldedit.util.Location clicked) {
 
         World world = (World) clicked.getExtent();

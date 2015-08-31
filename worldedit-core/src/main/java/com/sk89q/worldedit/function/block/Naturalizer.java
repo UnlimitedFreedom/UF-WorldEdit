@@ -35,6 +35,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * only below that for all layers that originally consist of grass, dirt,
  * or smooth stone.
  */
+@SuppressWarnings("deprecation")
 public class Naturalizer implements LayerFunction {
 
     private final EditSession editSession;

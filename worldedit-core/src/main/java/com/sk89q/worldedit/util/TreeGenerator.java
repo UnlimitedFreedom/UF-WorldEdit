@@ -26,6 +26,7 @@ import com.sk89q.worldedit.blocks.BaseBlock;
 import com.sk89q.worldedit.blocks.BlockID;
 
 import javax.annotation.Nullable;
+
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -178,7 +179,8 @@ public class TreeGenerator {
      *
      * @param basePosition the base position
      */
-    private static void makePineTree(EditSession editSession, Vector basePosition)
+    @SuppressWarnings("deprecation")
+	private static void makePineTree(EditSession editSession, Vector basePosition)
             throws MaxChangedBlocksException {
         int trunkHeight = (int) Math.floor(Math.random() * 2) + 3;
         int height = (int) Math.floor(Math.random() * 5) + 8;

@@ -22,6 +22,7 @@ package com.sk89q.worldedit.extension.platform;
 /**
  * Thrown when no capable platform is found.
  */
+@SuppressWarnings("serial")
 public class NoCapablePlatformException extends RuntimeException {
 
     public NoCapablePlatformException() {

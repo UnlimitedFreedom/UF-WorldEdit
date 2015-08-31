@@ -40,7 +40,8 @@ public class SinglePickaxe implements BlockTool {
         return player.hasPermission("worldedit.superpickaxe");
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean actPrimary(Platform server, LocalConfiguration config, Player player, LocalSession session, com.sk89q.worldedit.util.Location clicked) {
         World world = (World) clicked.getExtent();
         final int blockType = world.getBlockType(clicked.toVector());

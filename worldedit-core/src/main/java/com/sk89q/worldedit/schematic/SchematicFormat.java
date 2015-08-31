@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+@SuppressWarnings("deprecation")
 public abstract class SchematicFormat {
 
     private static final Map<String, SchematicFormat> SCHEMATIC_FORMATS = new HashMap<String, SchematicFormat>();

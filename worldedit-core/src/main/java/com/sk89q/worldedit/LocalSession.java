@@ -46,6 +46,7 @@ import com.sk89q.worldedit.world.World;
 import com.sk89q.worldedit.world.snapshot.Snapshot;
 
 import javax.annotation.Nullable;
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -210,7 +211,7 @@ public class LocalSession {
      * @param player the player
      * @return whether anything was undone
      */
-    public EditSession undo(@Nullable BlockBag newBlockBag, LocalPlayer player) {
+    public EditSession undo(@Nullable BlockBag newBlockBag, @SuppressWarnings("deprecation") LocalPlayer player) {
         return undo(newBlockBag, (Player) player);
     }
 
@@ -245,7 +246,7 @@ public class LocalSession {
      * @param player the player
      * @return whether anything was redone
      */
-    public EditSession redo(@Nullable BlockBag newBlockBag, LocalPlayer player) {
+    public EditSession redo(@Nullable BlockBag newBlockBag, @SuppressWarnings("deprecation") LocalPlayer player) {
         return redo(newBlockBag, (Player) player);
     }
 
@@ -703,6 +704,11 @@ public class LocalSession {
         if (hasCUISupport) {
             actor.dispatchCUIEvent(event);
         }
+        
+
+        if (actor instanceof com.sk89q.worldedit.entity.Player) {
+            me.StevenLawson.worldedit.WorldEditHandler.selectionChanged((com.sk89q.worldedit.entity.Player) actor);
+        }
     }
 
     /**
@@ -856,7 +862,6 @@ public class LocalSession {
      * @param player the player
      * @return an edit session
      */
-    @SuppressWarnings("deprecation")
     public EditSession createEditSession(Player player) {
         checkNotNull(player);
 

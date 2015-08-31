@@ -50,6 +50,7 @@ import java.util.Map.Entry;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+@SuppressWarnings("deprecation")
 public class MCEditSchematicFormat extends SchematicFormat {
 
     private static final int MAX_SIZE = Short.MAX_VALUE - Short.MIN_VALUE;

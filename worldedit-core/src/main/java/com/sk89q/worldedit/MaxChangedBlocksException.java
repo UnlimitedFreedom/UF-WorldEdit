@@ -23,6 +23,7 @@ package com.sk89q.worldedit;
  * Thrown when too many blocks are changed (which may be limited
  * due to the configuration).
  */
+@SuppressWarnings("serial")
 public class MaxChangedBlocksException extends WorldEditException {
 
     int maxBlocks;

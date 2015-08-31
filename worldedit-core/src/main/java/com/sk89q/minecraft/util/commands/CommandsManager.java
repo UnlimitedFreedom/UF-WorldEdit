@@ -59,7 +59,6 @@ import java.util.logging.Logger;
  *
  * @param <T> command sender class
  */
-@SuppressWarnings("ProtectedField")
 public abstract class CommandsManager<T> {
 
     protected static final Logger logger =

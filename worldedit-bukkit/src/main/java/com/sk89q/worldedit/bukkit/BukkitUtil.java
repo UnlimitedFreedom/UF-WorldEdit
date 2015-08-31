@@ -28,6 +28,7 @@ import com.sk89q.worldedit.blocks.BlockID;
 import com.sk89q.worldedit.blocks.BlockType;
 import com.sk89q.worldedit.blocks.ItemID;
 import com.sk89q.worldedit.blocks.SkullBlock;
+
 import org.bukkit.DyeColor;
 import org.bukkit.Server;
 import org.bukkit.World;
@@ -49,9 +50,11 @@ import com.sk89q.worldedit.bukkit.entity.BukkitEntity;
 import com.sk89q.worldedit.bukkit.entity.BukkitExpOrb;
 import com.sk89q.worldedit.bukkit.entity.BukkitItem;
 import com.sk89q.worldedit.bukkit.entity.BukkitPainting;
+
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Dye;
 
+@SuppressWarnings("deprecation")
 public final class BukkitUtil {
 
     private BukkitUtil() {
@@ -128,7 +131,6 @@ public final class BukkitUtil {
      * Bukkit's Location class has serious problems with floating point
      * precision.
      */
-    @SuppressWarnings("RedundantIfStatement")
     public static boolean equals(org.bukkit.Location a, org.bukkit.Location b) {
         if (Math.abs(a.getX() - b.getX()) > EQUALS_PRECISION) return false;
         if (Math.abs(a.getY() - b.getY()) > EQUALS_PRECISION) return false;

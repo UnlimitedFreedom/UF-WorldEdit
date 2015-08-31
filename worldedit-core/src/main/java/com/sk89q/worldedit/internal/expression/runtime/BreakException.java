@@ -23,6 +23,7 @@ package com.sk89q.worldedit.internal.expression.runtime;
  * Thrown when a break or continue is encountered.
  * Loop constructs catch this exception.
  */
+@SuppressWarnings("serial")
 public class BreakException extends EvaluationException {
 
     final boolean doContinue;

@@ -22,6 +22,7 @@ package com.sk89q.worldedit;
 /**
  * Parent for all WorldEdit exceptions.
  */
+@SuppressWarnings("serial")
 public abstract class WorldEditException extends Exception {
 
     /**

@@ -41,6 +41,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * be repeated if the position is contained in more than one region, but this cannot
  * be guaranteed to occur.</p>
  */
+@SuppressWarnings("deprecation")
 public class RegionIntersection extends AbstractRegion {
 
     private final List<Region> regions = new ArrayList<Region>();
@@ -134,7 +135,7 @@ public class RegionIntersection extends AbstractRegion {
         return false;
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked"})
     @Override
     public Iterator<BlockVector> iterator() {
         Iterator<BlockVector>[] iterators = (Iterator<BlockVector>[]) new Iterator[regions.size()];

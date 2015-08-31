@@ -33,7 +33,6 @@ import com.sk89q.worldedit.world.registry.EntityRegistry;
 public class CreatureButcher {
 
     final class Flags {
-        @SuppressWarnings("PointlessBitwiseExpression")
         public static final int PETS = 1 << 0;
         public static final int NPCS = 1 << 1;
         public static final int ANIMALS = 1 << 2;

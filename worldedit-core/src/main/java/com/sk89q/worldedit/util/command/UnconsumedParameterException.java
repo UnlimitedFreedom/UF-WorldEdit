@@ -25,6 +25,7 @@ import com.sk89q.worldedit.util.command.parametric.ParameterException;
  * Thrown when there are leftover parameters that were not consumed, particular in the
  * case of the user providing too many parameters.
  */
+@SuppressWarnings("serial")
 public class UnconsumedParameterException extends ParameterException {
     
     private String unconsumed;

@@ -23,6 +23,7 @@ package com.sk89q.worldedit.world.snapshot;
 
 import com.sk89q.worldedit.world.DataException;
 import com.sk89q.worldedit.world.storage.*;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
@@ -126,7 +127,8 @@ public class Snapshot implements Comparable<Snapshot> {
     public boolean containsWorld(String worldname) {
         try {
             if (file.getName().toLowerCase().endsWith(".zip")) {
-                ZipFile entry = new ZipFile(file);
+                @SuppressWarnings("resource")
+				ZipFile entry = new ZipFile(file);
                 return (entry.getEntry(worldname) != null
                 || entry.getEntry(worldname + "/level.dat") != null);
             } else if (file.getName().toLowerCase().endsWith(".tar.bz2")

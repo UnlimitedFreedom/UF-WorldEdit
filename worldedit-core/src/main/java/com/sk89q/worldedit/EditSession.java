@@ -95,7 +95,7 @@ import static com.sk89q.worldedit.regions.Regions.*;
  * {@link Extent}s that are chained together. For example, history is logged
  * using the {@link ChangeSetExtent}.</p>
  */
-@SuppressWarnings({"FieldCanBeLocal", "deprecation"})
+@SuppressWarnings({"deprecation"})
 public class EditSession implements Extent {
 
     private static final Logger log = Logger.getLogger(EditSession.class.getCanonicalName());
@@ -110,7 +110,6 @@ public class EditSession implements Extent {
         BEFORE_CHANGE
     }
 
-    @SuppressWarnings("ProtectedField")
     protected final World world;
     private final ChangeSet changeSet = new BlockOptimizedHistory();
 
@@ -130,7 +129,6 @@ public class EditSession implements Extent {
     private final Extent bypassHistory;
     private final Extent bypassNone;
 
-    @SuppressWarnings("deprecation")
     private Mask oldMask;
 
     /**
@@ -140,7 +138,6 @@ public class EditSession implements Extent {
      * @param maxBlocks the maximum number of blocks that can be changed, or -1 to use no limit
      * @deprecated use {@link WorldEdit#getEditSessionFactory()} to create {@link EditSession}s
      */
-    @SuppressWarnings("deprecation")
     @Deprecated
     public EditSession(LocalWorld world, int maxBlocks) {
         this(world, maxBlocks, null);
@@ -559,7 +556,6 @@ public class EditSession implements Extent {
      * @return Whether the block changed -- not entirely dependable
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public boolean setBlock(Vector position, Pattern pattern) throws MaxChangedBlocksException {
         return setBlock(position, pattern.next(position));
     }
@@ -573,7 +569,6 @@ public class EditSession implements Extent {
      * @return the number of changed blocks
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     private int setBlocks(Set<Vector> vset, Pattern pattern) throws MaxChangedBlocksException {
         int affected = 0;
         for (Vector v : vset) {
@@ -592,7 +587,6 @@ public class EditSession implements Extent {
      * @return whether a block was changed
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public boolean setChanceBlockIfAir(Vector position, BaseBlock block, double probability)
             throws MaxChangedBlocksException {
         return Math.random() <= probability && setBlockIfAir(position, block);
@@ -738,7 +732,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int fillXZ(Vector origin, BaseBlock block, double radius, int depth, boolean recursive)
             throws MaxChangedBlocksException {
         return fillXZ(origin, new SingleBlockPattern(block), radius, depth, recursive);
@@ -755,7 +748,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int fillXZ(Vector origin, Pattern pattern, double radius, int depth, boolean recursive) throws MaxChangedBlocksException {
         checkNotNull(origin);
         checkNotNull(pattern);
@@ -798,7 +790,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int removeAbove(Vector position, int apothem, int height) throws MaxChangedBlocksException {
         checkNotNull(position);
         checkArgument(apothem >= 1, "apothem >= 1");
@@ -821,7 +812,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int removeBelow(Vector position, int apothem, int height) throws MaxChangedBlocksException {
         checkNotNull(position);
         checkArgument(apothem >= 1, "apothem >= 1");
@@ -844,7 +834,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int removeNear(Vector position, int blockType, int apothem) throws MaxChangedBlocksException {
         checkNotNull(position);
         checkArgument(apothem >= 1, "apothem >= 1");
@@ -867,7 +856,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int setBlocks(Region region, BaseBlock block) throws MaxChangedBlocksException {
         return setBlocks(region, new SingleBlockPattern(block));
     }
@@ -880,7 +868,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int setBlocks(Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -901,7 +888,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int replaceBlocks(Region region, Set<BaseBlock> filter, BaseBlock replacement) throws MaxChangedBlocksException {
         return replaceBlocks(region, filter, new SingleBlockPattern(replacement));
     }
@@ -916,7 +902,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int replaceBlocks(Region region, Set<BaseBlock> filter, Pattern pattern) throws MaxChangedBlocksException {
         Mask mask = filter == null ? new ExistingBlockMask(this) : new FuzzyBlockMask(this, filter);
         return replaceBlocks(region, mask, pattern);
@@ -932,7 +917,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int replaceBlocks(Region region, Mask mask, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(mask);
@@ -955,7 +939,6 @@ public class EditSession implements Extent {
      * @return the number of blocks placed
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int center(Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -976,7 +959,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeCuboidFaces(Region region, BaseBlock block) throws MaxChangedBlocksException {
         return makeCuboidFaces(region, new SingleBlockPattern(block));
     }
@@ -989,7 +971,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeCuboidFaces(Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -1009,7 +990,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeFaces(final Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -1031,7 +1011,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeCuboidWalls(Region region, BaseBlock block) throws MaxChangedBlocksException {
         return makeCuboidWalls(region, new SingleBlockPattern(block));
     }
@@ -1045,7 +1024,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeCuboidWalls(Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -1065,7 +1043,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int makeWalls(final Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);
@@ -1099,7 +1076,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int overlayCuboidBlocks(Region region, BaseBlock block) throws MaxChangedBlocksException {
         checkNotNull(block);
 
@@ -1115,7 +1091,6 @@ public class EditSession implements Extent {
      * @return number of blocks affected
      * @throws MaxChangedBlocksException thrown if too many blocks are changed
      */
-    @SuppressWarnings("deprecation")
     public int overlayCuboidBlocks(Region region, Pattern pattern) throws MaxChangedBlocksException {
         checkNotNull(region);
         checkNotNull(pattern);

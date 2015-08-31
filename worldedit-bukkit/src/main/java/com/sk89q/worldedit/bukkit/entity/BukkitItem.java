@@ -21,11 +21,13 @@ package com.sk89q.worldedit.bukkit.entity;
 
 import com.sk89q.worldedit.Location;
 import com.sk89q.worldedit.bukkit.BukkitUtil;
+
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
+@SuppressWarnings("deprecation")
 public class BukkitItem extends BukkitEntity {
 
     private final ItemStack stack;

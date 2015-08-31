@@ -21,6 +21,7 @@ package com.sk89q.worldedit.bukkit.entity;
 
 import com.sk89q.worldedit.Location;
 import com.sk89q.worldedit.bukkit.BukkitUtil;
+
 import org.bukkit.Art;
 import org.bukkit.Bukkit;
 import org.bukkit.block.BlockFace;
@@ -33,6 +34,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@SuppressWarnings("deprecation")
 public class BukkitPainting extends BukkitEntity {
 
     private static final Logger log = Logger.getLogger(BukkitPainting.class.getCanonicalName());

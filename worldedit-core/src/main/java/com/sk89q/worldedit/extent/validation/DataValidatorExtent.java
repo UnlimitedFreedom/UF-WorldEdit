@@ -67,7 +67,8 @@ public class DataValidatorExtent extends AbstractDelegateExtent {
         return super.setBlock(location, block);
     }
 
-    private static class SevereValidationException extends WorldEditException {
+    @SuppressWarnings("serial")
+	private static class SevereValidationException extends WorldEditException {
         private SevereValidationException(String message) {
             super(message);
         }

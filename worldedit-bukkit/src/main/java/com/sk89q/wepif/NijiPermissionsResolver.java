@@ -20,6 +20,7 @@
 package com.sk89q.wepif;
 
 import com.sk89q.util.yaml.YAMLProcessor;
+
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Server;
@@ -27,6 +28,7 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
+
 import com.nijikokun.bukkit.Permissions.Permissions;
 
 import java.util.logging.Level;
@@ -73,7 +75,7 @@ public class NijiPermissionsResolver implements PermissionsResolver {
     }
 
     @Override
-    @SuppressWarnings("static-access")
+    @SuppressWarnings({ "static-access", "deprecation" })
     public boolean hasPermission(String name, String permission) {
         try {
             Player player = server.getPlayerExact(name);
@@ -89,7 +91,8 @@ public class NijiPermissionsResolver implements PermissionsResolver {
         }
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public boolean hasPermission(String worldName, String name, String permission) {
         try {
             try {
@@ -104,7 +107,7 @@ public class NijiPermissionsResolver implements PermissionsResolver {
     }
 
     @Override
-    @SuppressWarnings("static-access")
+    @SuppressWarnings({ "static-access", "deprecation" })
     public boolean inGroup(String name, String group) {
         try {
             Player player = server.getPlayerExact(name);
@@ -121,7 +124,7 @@ public class NijiPermissionsResolver implements PermissionsResolver {
     }
 
     @Override
-    @SuppressWarnings("static-access")
+    @SuppressWarnings({ "static-access", "deprecation" })
     public String[] getGroups(String name) {
         try {
             Player player = server.getPlayerExact(name);

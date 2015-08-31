@@ -23,6 +23,7 @@ package com.sk89q.worldedit;
  * Thrown when a maximum radius is reached, such as, for example,
  * in the case of a sphere command.
  */
+@SuppressWarnings("serial")
 public class MaxRadiusException extends WorldEditException {
 
 }

@@ -19,6 +19,7 @@
 
 package com.sk89q.worldedit.world.snapshot;
 
+@SuppressWarnings("serial")
 public class InvalidSnapshotException extends Exception {
 
 }

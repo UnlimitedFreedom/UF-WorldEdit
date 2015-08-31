@@ -38,9 +38,9 @@ import static com.sk89q.minecraft.util.commands.Logging.LogMode.POSITION;
 /**
  * Commands for moving the player around.
  */
+@SuppressWarnings("deprecation")
 public class NavigationCommands {
 
-    @SuppressWarnings("unused")
     private final WorldEdit worldEdit;
 
     /**
@@ -123,7 +123,7 @@ public class NavigationCommands {
 
         final boolean alwaysGlass = getAlwaysGlass(args);
         if (player.ascendToCeiling(clearance, alwaysGlass)) {
-            player.print("Whoosh!");
+            player.print("Bazzinga!");
         } else {
             player.printError("No free spot above you found.");
         }
@@ -139,7 +139,7 @@ public class NavigationCommands {
     @CommandPermissions("worldedit.navigation.thru.command")
     public void thru(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
         if (player.passThroughForwardWall(6)) {
-            player.print("Whoosh!");
+            player.print("Bazzinga!");
         } else {
             player.printError("No free spot ahead of you found.");
         }
@@ -158,7 +158,7 @@ public class NavigationCommands {
         WorldVector pos = player.getSolidBlockTrace(300);
         if (pos != null) {
             player.findFreePosition(pos);
-            player.print("Poof!");
+            player.print("Bazzinga!");
         } else {
             player.printError("No block in sight!");
         }
@@ -179,7 +179,7 @@ public class NavigationCommands {
 
         final boolean alwaysGlass = getAlwaysGlass(args);
         if (player.ascendUpwards(distance, alwaysGlass)) {
-            player.print("Whoosh!");
+            player.print("Bazzinga!");
         } else {
             player.printError("You would hit something above you.");
         }

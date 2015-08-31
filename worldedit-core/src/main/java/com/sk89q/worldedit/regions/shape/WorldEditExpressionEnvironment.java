@@ -46,32 +46,38 @@ public class WorldEditExpressionEnvironment implements ExpressionEnvironment {
         return current.add(x, y, z);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockType(double x, double y, double z) {
         return editSession.getBlockType(toWorld(x, y, z));
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockData(double x, double y, double z) {
         return editSession.getBlockData(toWorld(x, y, z));
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockTypeAbs(double x, double y, double z) {
         return editSession.getBlockType(new Vector(x, y, z));
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockDataAbs(double x, double y, double z) {
         return editSession.getBlockData(new Vector(x, y, z));
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockTypeRel(double x, double y, double z) {
         return editSession.getBlockType(toWorldRel(x, y, z));
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public int getBlockDataRel(double x, double y, double z) {
         return editSession.getBlockData(toWorldRel(x, y, z));
     }

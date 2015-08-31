@@ -36,6 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * <p>If no error message is set and full help is not to be shown, then a generic
  * "you used this command incorrectly" message should be shown.</p>
  */
+@SuppressWarnings("serial")
 public class InvalidUsageException extends CommandException {
 
     private final CommandCallable command;

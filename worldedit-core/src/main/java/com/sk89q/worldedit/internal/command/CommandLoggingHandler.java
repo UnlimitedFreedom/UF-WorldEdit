@@ -62,7 +62,8 @@ public class CommandLoggingHandler extends AbstractInvokeListener implements Inv
     public void preProcess(Object object, Method method, ParameterData[] parameters, CommandContext context) throws CommandException, ParameterException {
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void preInvoke(Object object, Method method, ParameterData[] parameters, Object[] args, CommandContext context) throws CommandException {
         Logging loggingAnnotation = method.getAnnotation(Logging.class);
         Logging.LogMode logMode;

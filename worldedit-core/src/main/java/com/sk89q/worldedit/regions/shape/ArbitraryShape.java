@@ -31,13 +31,13 @@ import com.sk89q.worldedit.regions.Region;
  * Generates solid and hollow shapes according to materials returned by the
  * {@link #getMaterial} method.
  */
+@SuppressWarnings("deprecation")
 public abstract class ArbitraryShape {
 
     protected final Region extent;
     private int cacheOffsetX;
     private int cacheOffsetY;
     private int cacheOffsetZ;
-    @SuppressWarnings("FieldCanBeLocal")
     private int cacheSizeX;
     private int cacheSizeY;
     private int cacheSizeZ;

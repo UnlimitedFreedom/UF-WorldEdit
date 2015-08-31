@@ -24,11 +24,14 @@ import java.util.List;
 
 import com.sk89q.worldedit.LocalWorld;
 import com.sk89q.worldedit.regions.selector.Polygonal2DRegionSelector;
+
 import org.bukkit.World;
+
 import com.sk89q.worldedit.BlockVector2D;
 import com.sk89q.worldedit.bukkit.BukkitUtil;
 import com.sk89q.worldedit.regions.*;
 
+@SuppressWarnings("deprecation")
 public class Polygonal2DSelection extends RegionSelection {
 
     protected Polygonal2DRegion poly2d;
