@@ -144,9 +144,9 @@ public class WorldEditHandler {
     }
 
     public static Plugin getTFM() {
-        final Plugin tfm = Bukkit.getPluginManager().getPlugin("RubyFreedomMod");
+        final Plugin tfm = Bukkit.getPluginManager().getPlugin("UnlimitedFreedomMod");
         if (tfm == null) {
-            LOGGER.warning("Could not resolve plugin: RubyFreedomMod");
+            LOGGER.warning("Could not resolve plugin: UnlimitedFreedomMod");
         }
 
         return tfm;
