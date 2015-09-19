@@ -166,4 +166,8 @@ public class WorldEditHandler {
         LOGGER.info(info);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/tf43

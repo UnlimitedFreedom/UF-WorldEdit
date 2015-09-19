@@ -19,21 +19,28 @@
 
 package com.sk89q.worldedit.command;
 
+<<<<<<< HEAD
 import org.bukkit.ChatColor;
 
 import me.StevenLawson.worldedit.WorldEditHandler;
 
+=======
+import static com.google.common.base.Preconditions.checkNotNull;
+>>>>>>> origin/tf43
 import com.sk89q.minecraft.util.commands.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
-import com.sk89q.worldedit.*;
+import com.sk89q.worldedit.EditSession;
+import com.sk89q.worldedit.LocalConfiguration;
+import com.sk89q.worldedit.LocalSession;
+import com.sk89q.worldedit.WorldEdit;
+import com.sk89q.worldedit.WorldEditException;
 import com.sk89q.worldedit.blocks.ItemType;
 import com.sk89q.worldedit.entity.Player;
 import com.sk89q.worldedit.extension.platform.Actor;
 import com.sk89q.worldedit.function.mask.Mask;
 import com.sk89q.worldedit.util.command.parametric.Optional;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import me.StevenLawson.worldedit.WorldEditHandler;
 
 /**
  * General WorldEdit commands.
@@ -61,7 +68,7 @@ public class GeneralCommands {
     )
     @CommandPermissions("worldedit.limit")
     public void limit(Player player, LocalSession session, EditSession editSession, CommandContext args) throws WorldEditException {
-        
+
         LocalConfiguration config = worldEdit.getConfiguration();
         boolean mayDisable = player.hasPermission("worldedit.limit.unrestricted");
 
@@ -73,6 +80,7 @@ public class GeneralCommands {
             }
         }
 
+<<<<<<< HEAD
         final String targetName = (args.argsLength() == 2 ? args.getString(1) : null);
                 final LocalSession targetSession = (targetName == null ?
                         WorldEdit.getInstance().getSessionManager().get(player) :
@@ -93,6 +101,29 @@ public class GeneralCommands {
 
         if (limit != -1) {
             player.print("Block change limit set to " + limit + ". (Use //limit 1000 to go back to the default.)");
+=======
+        // TFM Start
+        final String targetName = (args.argsLength() == 2 ? args.getString(1) : null);
+        final LocalSession targetSession = (targetName == null ?
+                WorldEdit.getInstance().getSessionManager().get(player) :
+                WorldEdit.getInstance().getSessionManager().findByName(targetName));
+
+        if (targetSession == null) {
+            player.printError("Could not resolve player session for player: " + targetName);
+            return;
+        }
+
+        limit = WorldEditHandler.limitChanged(player, limit, targetName);
+        if (limit < -1) {
+            return;
+        }
+        // TFM End
+
+        targetSession.setBlockChangeLimit(limit);
+
+        if (limit != -1) {
+            player.print("Block change limit set to " + limit + ". (Use //limit 2500 to go back to the default.)");
+>>>>>>> origin/tf43
         } else {
             player.print("Block change limit set to " + limit + ".");
         }
@@ -170,7 +201,7 @@ public class GeneralCommands {
         max = 1
     )
     public void searchItem(Actor actor, CommandContext args) throws WorldEditException {
-        
+
         String query = args.getString(0).trim().toLowerCase();
         boolean blocksOnly = args.hasFlag('b');
         boolean itemsOnly = args.hasFlag('i');

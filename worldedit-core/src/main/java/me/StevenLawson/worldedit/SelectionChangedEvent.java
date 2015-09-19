@@ -54,4 +54,8 @@ public class SelectionChangedEvent extends PlayerEvent implements Cancellable {
     public static HandlerList getHandlerList() {
         return handlers;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/tf43

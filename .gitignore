@@ -19,4 +19,8 @@ run
 /dependency-reduced-pom.xml
 *-private.sh
 .nb-gradle
+<<<<<<< HEAD
 .nb-gradle-properties
+=======
+.nb-gradle-properties
+>>>>>>> origin/tf43
